@@ -3,8 +3,8 @@ window.SYNERGY_DEFS = [
     name: "Elf",
     type: "race",
     levels: [
-      { required: 3, perk: "30% evasion" },
-      { required: 6, perk: "another 30% evasion" }
+      { required: 3, perk: "elves gain 30% evasion" },
+      { required: 6, perk: "elves gain another 30% evasion" }
     ]
   },
   {
@@ -20,8 +20,8 @@ window.SYNERGY_DEFS = [
     name: "Hunter",
     type: "class",
     levels: [
-      { required: 3, perk: "50% chance to proc another hit" },
-      { required: 6, perk: "another 50% chance to proc another hit" },
+      { required: 3, perk: "hunters have 50% chance to proc an extra hit" },
+      { required: 6, perk: "hunters have another 50% chance to proc an extra hit" },
       { required: 9, perk: "hunters push targets 2 squares back on hit" }
     ]
   },
@@ -29,8 +29,8 @@ window.SYNERGY_DEFS = [
     name: "Assassin",
     type: "class",
     levels: [
-      { required: 3, perk: "units crit after a leap and have a 20% chance to deal 300% damage" },
-      { required: 6, perk: "an additional 20% chance to deal 400% damage" },
+      { required: 3, perk: "assassins crit after a leap and have a 20% chance to deal 300% damage" },
+      { required: 6, perk: "assassins gain an additional 20% chance to deal 400% damage" },
       { required: 9, perk: "assassins get a guaranteed crit again after 15s" }
     ]
   },
@@ -47,15 +47,15 @@ window.SYNERGY_DEFS = [
     name: "Monk",
     type: "class",
     levels: [
-      { required: 2, perk: "50% chance to cull a low-health enemy when dealing damage" },
-      { required: 4, perk: "50% chance to halve an enemy's HP when dealing damage" }
+      { required: 2, perk: "monks have a 50% chance to cull a low-health enemy when dealing damage" },
+      { required: 4, perk: "monks have a 50% chance to halve an enemy's HP when dealing damage" }
     ]
   },
   {
     name: "Priest",
     type: "class",
     levels: [
-      { required: 2, perk: "gain a Tango if you are playing allowed slots minus 1 and take damage" },
+      { required: 2, perk: "gain a Tango if you are playing allowed_slots -1 and take damage" },
       {
         required: 4,
         perk: "for every slot available, a priest converts an enemy of the same or lower level to fight for you"
@@ -66,20 +66,21 @@ window.SYNERGY_DEFS = [
     name: "Warrior",
     type: "class",
     levels: [
-      { required: 3, perk: "+5 armor" },
-      { required: 6, perk: "+10 armor" }
+      { required: 3, perk: "+5 armor for warriors" },
+      { required: 6, perk: "+10 armor for warriors" }
+      { required: 9, perk: "Warriors reflect physical/magical damage, based on armour" }
     ]
   },
   {
     name: "Demon",
     type: "race",
-    levels: [{ required: 1, perk: "the unit gets pure damage if it is the only demon on the board" }]
+    levels: [{ required: 1, perk: "the demon gets pure attack damage if it is the only demon on the board" }]
   },
   {
     name: "Demon Hunter",
     type: "class",
     levels: [
-      { required: 2, perk: "all demons get pure damage" },
+      { required: 2, perk: "all demons get pure attack damage" },
       { required: 4, perk: "all units deal only pure damage" }
     ]
   },
