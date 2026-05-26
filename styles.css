@@ -40,6 +40,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .control-row {
@@ -85,6 +86,12 @@ button:hover {
   align-items: start;
 }
 
+.left-column {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
 .panel {
   background: var(--card);
   border: 1px solid var(--border);
@@ -95,6 +102,121 @@ button:hover {
 .panel h2 {
   margin: 0 0 0.55rem;
   font-size: 1.02rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.panel-head h2 {
+  margin: 0;
+}
+
+.filter-groups {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
+}
+
+.filter-group {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.filter-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.filter-pill {
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: #f8f1e4;
+  font-size: 0.78rem;
+}
+
+.filter-pill.is-active {
+  background: var(--accent);
+  color: #fff7ee;
+  border-color: var(--accent);
+}
+
+.unit-browser {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.browser-cost-group {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.browser-cost-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.browser-cost-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.browser-unit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem;
+  background: #fff;
+}
+
+.browser-unit-main {
+  min-width: 0;
+}
+
+.browser-unit-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.browser-unit-meta,
+.browser-unit-traits {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.browser-unit-traits {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browser-unit-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.copy-count {
+  min-width: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .build-list,
@@ -163,6 +285,12 @@ button:hover {
   margin-top: 0.25rem;
 }
 
+.menu-row select {
+  width: 100%;
+  min-width: 0;
+  font-size: 0.78rem;
+}
+
 .menu-item {
   padding: 0.16rem 0.42rem;
   font-size: 0.78rem;
@@ -209,6 +337,10 @@ button:hover {
 }
 
 @media (max-width: 900px) {
+  .browser-cost-list {
+    grid-template-columns: 1fr;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

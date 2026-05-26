@@ -15,12 +15,6 @@
 
       <section class="controls">
         <div class="control-row">
-          <label for="unit-select">Unit</label>
-          <select id="unit-select"></select>
-          <button id="add-unit-btn" type="button">Add Unit</button>
-        </div>
-
-        <div class="control-row">
           <label for="build-name">Build Name</label>
           <input id="build-name" type="text" placeholder="e.g. Undead Hunters" />
           <button id="save-build-btn" type="button">Save Build</button>
@@ -38,10 +32,21 @@
       </section>
 
       <section class="grid">
-        <section class="panel">
-          <h2>Current Build</h2>
-          <div id="build-list" class="build-list"></div>
-        </section>
+        <div class="left-column">
+          <section class="panel">
+            <h2 id="build-title">Current Build (0)</h2>
+            <div id="build-list" class="build-list"></div>
+          </section>
+
+          <section class="panel browser-panel">
+            <div class="panel-head">
+              <h2>Unit Browser</h2>
+              <button id="clear-filters-btn" type="button">Clear Filters</button>
+            </div>
+            <div id="filter-groups" class="filter-groups"></div>
+            <div id="unit-browser" class="unit-browser"></div>
+          </section>
+        </div>
 
         <section class="panel">
           <h2>Synergies</h2>
