@@ -119,7 +119,7 @@ window.UNITS_BY_COST = {
     { name: "Sven", race: ["Demon"], class: ["Warrior"] },
     { name: "Queen of Pain", race: ["Demon"], class: ["Assassin"] },
     { name: "Abyssal Underlord", race: ["Demon"], class: ["Warlock"] },
-    { name: "Ringmaster", race: [], class: ["3 Random Classes"] },
+    { name: "Ringmaster", race: [], class: [] },
     { name: "Arc Warden", race: ["Kobold"], class: ["Shaman"] },
     { name: "Wraith King", race: ["Undead"], class: ["Knight"] },
     { name: "Necrophos", race: ["Undead"], class: ["Warlock"] },

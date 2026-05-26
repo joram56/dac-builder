@@ -29,6 +29,11 @@
   init();
 
   function init() {
+    if (!hasRequiredDom()) {
+      console.error("Builder initialization failed: required DOM elements are missing.");
+      return;
+    }
+
     renderFilterGroups();
     refreshSavedBuildsSelect();
     render();
@@ -38,6 +43,23 @@
     loadBuildBtn.addEventListener("click", loadSelectedBuild);
     deleteBuildBtn.addEventListener("click", deleteSelectedBuild);
     clearFiltersBtn.addEventListener("click", clearFilters);
+  }
+
+  function hasRequiredDom() {
+    return Boolean(
+      buildList &&
+        buildTitle &&
+        synergyList &&
+        unitBrowser &&
+        filterGroups &&
+        buildNameInput &&
+        saveBuildBtn &&
+        newBuildBtn &&
+        savedBuildsSelect &&
+        loadBuildBtn &&
+        deleteBuildBtn &&
+        clearFiltersBtn
+    );
   }
 
   function flattenUnits(unitsByCost) {
