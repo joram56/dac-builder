@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dota Auto Chess Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Dota Auto Chess Builder</h1>
+        <p>Simple static build tester with local saves.</p>
+      </header>
+
+      <section class="controls">
+        <div class="control-row">
+          <label for="unit-select">Unit</label>
+          <select id="unit-select"></select>
+          <button id="add-unit-btn" type="button">Add Unit</button>
+        </div>
+
+        <div class="control-row">
+          <label for="build-name">Build Name</label>
+          <input id="build-name" type="text" placeholder="e.g. Undead Hunters" />
+          <button id="save-build-btn" type="button">Save Build</button>
+          <button id="new-build-btn" type="button">New Build</button>
+        </div>
+
+        <div class="control-row">
+          <label for="saved-builds">Saved Builds</label>
+          <select id="saved-builds">
+            <option value="">Select saved build</option>
+          </select>
+          <button id="load-build-btn" type="button">Load</button>
+          <button id="delete-build-btn" type="button">Delete</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <section class="panel">
+          <h2>Current Build</h2>
+          <div id="build-list" class="build-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Synergies</h2>
+          <div id="synergy-list" class="synergy-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="units.js"></script>
+    <script src="synergies.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
