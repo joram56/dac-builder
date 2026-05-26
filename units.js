@@ -7,7 +7,7 @@ window.UNITS_BY_COST = {
     { name: "Dazzle", race: ["Troll"], class: ["Priest"] },
     { name: "Tusk", race: ["Beast"], class: ["Warrior"] },
     { name: "Hoodwink", race: ["Beast"], class: ["Hunter"] },
-    { name: "Enchantress", race: ["Beast"], class: ["Druid"] },
+    { name: "Enchantress", race: ["Beast", "Centaur"], class: ["Druid"] },
     { name: "Crystal Maiden", race: ["Human"], class: ["Mage"] },
     { name: "Axe", race: ["Orc"], class: ["Warrior"] },
     { name: "Clockwerk", race: ["Goblin"], class: ["Mech"] },
