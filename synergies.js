@@ -67,7 +67,7 @@ window.SYNERGY_DEFS = [
     type: "class",
     levels: [
       { required: 3, perk: "+5 armor for warriors" },
-      { required: 6, perk: "+10 armor for warriors" }
+      { required: 6, perk: "+10 armor for warriors" },
       { required: 9, perk: "Warriors reflect physical/magical damage, based on armour" }
     ]
   },
