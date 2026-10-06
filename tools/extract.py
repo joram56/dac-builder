@@ -231,6 +231,9 @@ class Game:
                 pool.setdefault(pid, (cost, "special"))
         for pid in gold:
             pool.setdefault(pid, (5, "gold"))
+        # SSR variants: a single level-9 unit (no star upgrades) priced at its Level.
+        for pid in self.table("chess_list_ssr"):
+            pool.setdefault(pid, (int(self.units.get(pid, {}).get("Level", 9)), "ssr"))
 
         pieces = []
         for pid, (cost, source) in pool.items():
@@ -255,7 +258,9 @@ class Game:
                 "classes": classes,
                 "melee": "MELEE" in unit.get("AttackCapabilities", ""),
                 "model": model,
-                "stats": [self.unit_stats(pid), self.unit_stats(pid + "1"), self.unit_stats(pid + "11")],
+                "base": pid[6:-4] if source == "ssr" else None,
+                "stats": ([self.unit_stats(pid)] if source == "ssr"
+                          else [self.unit_stats(pid), self.unit_stats(pid + "1"), self.unit_stats(pid + "11")]),
                 "skill": self.skill(skills.get(pid)),
             })
         pieces.sort(key=lambda p: (p["cost"], p["name"]))

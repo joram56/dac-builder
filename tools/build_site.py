@@ -20,17 +20,19 @@ import shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_NAME = "DAC Builder"
-COST_LABEL = {1: "1 gold", 2: "2 gold", 3: "3 gold", 4: "4 gold", 5: "5 gold"}
+COST_LABEL = {1: "1 gold", 2: "2 gold", 3: "3 gold", 4: "4 gold", 5: "5 gold", 9: "9 gold"}
 SOURCE_LABEL = {
     "standard": None,
     "dark": "Undead spare",
     "special": "Special",
     "gold": "Gold Core",
+    "ssr": "SSR",
 }
 SOURCE_NOTE = {
     "dark": "Not in the normal shop. This is one of the “spare” Undead pieces: you mainly get it when a piece holding an Ascetic's Cap is reborn as a random Undead, or through Pandaren fishing.",
     "special": "Not in the normal shop. See Special pieces in the guide for how it appears.",
     "gold": "Only obtainable from a Gold Core draw.",
+    "ssr": "A super-rare variant. From courier level 7, each shop slot has a 1 in 100 million chance to offer one of the four SSR pieces. It costs 9 gold and arrives as a finished piece: it can't be upgraded and counts as ★★★ (level 9). For synergies it counts as a different piece from the normal version. See Special pieces in the guide.",
 }
 STAT_ROWS = [
     ("hp", "Health"),
@@ -104,6 +106,7 @@ class Site:
             "innate": c.get("innate", ""),
             "note": c.get("note", ""),
             "summary": c.get("summary", ""),
+            "details": c.get("details", []),
             "levels": levels,
         }
 
@@ -213,7 +216,7 @@ class Site:
 {''.join(groups)}
 <section class="cost-group" data-cost-group="special">
   <h2 class="cost-heading">Special pieces</h2>
-  <p class="muted">These pieces don't appear in the normal shop. The spare Undead come from the Ascetic's Cap item and Pandaren fishing, the Pandaren spirits only through fishing, and Io has a 0.2% chance to appear in any shop slot. <a href="../guide/special.html">More about special pieces</a>.</p>
+  <p class="muted">These pieces don't appear in the normal shop. The spare Undead come from the Ascetic's Cap item and Pandaren fishing, the Pandaren spirits only through fishing, Io has a 0.2% chance to appear in any shop slot, and the SSR pieces are a 1 in 100 million shop roll from courier level 7. <a href="../guide/special.html">More about special pieces</a>.</p>
   <div class="piece-grid">{special_cards}</div>
 </section>
 <p id="no-results" class="muted" hidden>No pieces match these filters.</p>
@@ -250,9 +253,12 @@ class Site:
             source = SOURCE_LABEL.get(p["source"])
             source_badge = f'<span class="badge">{esc(source)}</span>' if source else ""
             source_note = f'<p class="callout">{esc(SOURCE_NOTE[p["source"]])}</p>' if p["source"] in SOURCE_NOTE else ""
+            if p.get("base"):
+                b = self.piece_by_id[p["base"]]
+                source_note += f'<p class="callout">Normal version: <a href="{b["id"]}.html">{esc(b["name"])}</a> ({b["cost"]} gold).</p>'
             if p["id"] == "rm":
                 source_note += '<p class="callout">Ringmaster has no fixed race or class. At the start of every game it is given 3 random classes, which you can see in-game.</p>'
-            skill_html = self.skill_block(sk, root) if sk else ""
+            skill_html = self.skill_block(sk, root, ssr=p["source"] == "ssr") if sk else ""
             stats_html = self.stats_table(p)
             syn_html = []
             for t in p["races"] + p["classes"]:
@@ -292,7 +298,7 @@ class Site:
             desc = f"{p['name']} in Dota Auto Chess: {p['cost']}-cost " + ", ".join(self.syn_by_id[t]["name"] for t in p["races"] + p["classes"]) + f". Skill: {sk['name'] if sk else ''}."
             self.write(f"pieces/{p['id']}.html", self.page(f"pieces/{p['id']}.html", p["name"], body, "pieces", desc))
 
-    def skill_block(self, sk, root):
+    def skill_block(self, sk, root, ssr=False):
         rows = []
         for r in sk["values"]:
             vals = r["values"]
@@ -312,7 +318,11 @@ class Site:
                     rows.append(f"<tr><th>{label}</th>" + "".join(f"<td>{esc(v)}</td>" for v in vals) + "</tr>")
         table = ""
         if rows:
-            table = f'<table class="data-table"><thead><tr><th></th><th>★</th><th>★★</th><th>★★★</th></tr></thead><tbody>{"".join(rows)}</tbody></table>'
+            head = "<th></th><th>SSR</th>" if ssr else "<th></th><th>★</th><th>★★</th><th>★★★</th>"
+            body = "".join(rows)
+            if ssr:
+                body = body.replace(' colspan="3"', "")
+            table = f'<table class="data-table"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>'
         notes = "".join(f"<li>{esc(n)}</li>" for n in sk["notes"])
         kind = "Passive" if sk["kind"] == "passive" else "Active"
         header = esc(sk["header"]) if sk["header"] else kind
@@ -342,7 +352,8 @@ class Site:
                 else:
                     cells.append(f"<td>{st[key]}</td>")
             rows.append(f"<tr><th>{label}</th>{''.join(cells)}</tr>")
-        return f'<table class="data-table"><thead><tr><th></th><th>★</th><th>★★</th><th>★★★</th></tr></thead><tbody>{"".join(rows)}</tbody></table>'
+        head = "<th></th><th>SSR</th>" if len(p["stats"]) == 1 else "<th></th><th>★</th><th>★★</th><th>★★★</th>"
+        return f'<table class="data-table"><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table>'
 
     def synergy_levels_html(self, s, show_tooltip=True):
         items = []
@@ -352,6 +363,16 @@ class Site:
                 mismatch = f'<p class="mismatch"><strong>Note:</strong> {esc(lv["mismatch"])}</p>'
             items.append(f'<li><span class="req-pill">{lv["required"]}</span><div><p>{esc(lv["text"])}</p>{mismatch}</div></li>')
         return f'<ol class="levels">{"".join(items)}</ol>'
+
+    def details_html(self, s):
+        out = []
+        for d in s.get("details", []):
+            groups = "".join(
+                f'<h3>{esc(g["heading"])}</h3><ul>{"".join(f"<li>{esc(i)}</li>" for i in g["items"])}</ul>'
+                for g in d.get("groups", []))
+            intro = f'<p>{esc(d["intro"])}</p>' if d.get("intro") else ""
+            out.append(f'<section class="panel details"><h2>{esc(d["title"])}</h2>{intro}{groups}</section>')
+        return "".join(out)
 
     def build_synergies_index(self):
         root = "../"
@@ -434,6 +455,7 @@ class Site:
       {f'<p class="callout">{esc(s["note"])}</p>' if s["note"] else ''}
       {self.synergy_levels_html(s)}
     </section>
+    {self.details_html(s)}
     {tooltip_html}
     {f'<p class="lore">{esc(s["lore"])}</p>' if s["lore"] else ''}
   </div>
@@ -566,11 +588,8 @@ class Site:
                            for r, b in sorted(m["lootboxSchedule"].items(), key=lambda kv: int(kv[0])))
             return f'<table class="data-table"><thead><tr><th>Round</th><th>Reward</th></tr></thead><tbody>{rows}</tbody></table>'
 
-        def special_pieces():
-            out = []
-            for p in self.pieces:
-                if p["source"] != "standard":
-                    out.append(self.piece_card(p, "../"))
+        def pieces_from(source):
+            out = [self.piece_card(p, "../") for p in self.pieces if p["source"] == source]
             return f'<div class="piece-grid">{"".join(out)}</div>'
 
         def legendary_pieces():
@@ -593,7 +612,9 @@ class Site:
             "xp_table": xp_table,
             "pool_table": pool_table,
             "lootbox_table": lootbox_table,
-            "special_pieces": special_pieces,
+            "undead_pieces": lambda: pieces_from("dark"),
+            "pandaren_pieces": lambda: pieces_from("special"),
+            "ssr_pieces": lambda: pieces_from("ssr"),
             "legendary_pieces": legendary_pieces,
             "piece_count": lambda: str(len([p for p in self.pieces if p["source"] == "standard"])),
         }

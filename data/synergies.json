@@ -227,6 +227,37 @@
     "text": "All allies: right after casting their skill, the remaining cooldown of that skill and of all their items is cut by 60%.",
     "mismatch": ""
    }
+  ],
+  "details": [
+   {
+    "title": "What the cooldown reduction affects",
+    "intro": "The (2) and (4) bonuses are given at the start of each battle to every friendly piece on the board. Together they cut cooldowns to 36% of normal (0.6 × 0.6). They work on a piece's own skill, but many other timers in the game are fixed and ignore them.",
+    "groups": [
+     {
+      "heading": "Reduced",
+      "items": [
+       "Every piece's own skill, when it casts it normally.",
+       "Skills with special cooldown handling that the game scales for Gods: Jakiro's Ice Path and Macropyre, Invoker's Invoke, Mars's Bulwark and Gyrocopter's Flak Cannon."
+      ]
+     },
+     {
+      "heading": "Not reduced",
+      "items": [
+       "Item cooldowns (Hand of Midas, Force Staff and other active items). The (6) bonus does shorten them after a skill cast, see below.",
+       "Tauren totems. They are summoned just after battle-start buffs are given out, and they trigger on a % chance with a tiny fixed internal cooldown anyway.",
+       "Draenei: the (2) drain runs on a fixed 4-second timer, and the (4) healing burst has a fixed 5-second cooldown.",
+       "Other synergy timers, such as the Elf (9) illusion and the Satyr fear cooldowns.",
+       "Summons and illusions created during the battle. They don't receive the God buff."
+      ]
+     },
+     {
+      "heading": "The (6) bonus is different",
+      "items": [
+       "Half a second after a piece with mana casts its skill, the remaining cooldown of that skill and of all its items is cut by 60%. This is the only way Gods shorten item cooldowns."
+      ]
+     }
+    ]
+   }
   ]
  },
  {

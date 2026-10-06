@@ -448,3 +448,15 @@ details.panel[open] summary { margin-bottom: 0.6rem; }
   .piece-hero { flex-direction: column; align-items: flex-start; }
   h1 { font-size: 1.6rem; }
 }
+
+/* ------------------------------------------------------------------ SSR (9-cost) pieces */
+:root { --c9: #ff5d6c; }
+.cost-badge.cost-9 { background: var(--c9); }
+.cost-text-9 { color: var(--c9); }
+.piece-card.cost-9, .board-card.cost-9, .pick.cost-9 { border-top-color: var(--c9); }
+.mini-piece.cost-9 img, .mini-portrait.cost-9 { border-bottom-color: var(--c9); }
+.piece-hero.cost-9 .piece-portrait { border-color: var(--c9); }
+.ssr-tag { font-size: 0.72rem; font-weight: 800; color: var(--c9); letter-spacing: 0.04em; }
+.details h3 { margin-top: 1rem; font-size: 0.95rem; color: var(--accent); }
+.details ul { margin: 0; padding-left: 1.2rem; }
+.details li { margin-bottom: 0.3rem; font-size: 0.93rem; }

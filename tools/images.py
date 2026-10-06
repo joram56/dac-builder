@@ -102,8 +102,11 @@ def main():
     out = os.path.join(ROOT, "assets", "img")
     missing = []
 
+    by_id = {p["id"]: p for p in data["pieces"]}
     for p in data["pieces"]:
-        hero = HERO_OVERRIDES.get(p["id"]) or alias.get(norm(p["name"])) or alias.get(norm(p["id"]))
+        # SSR variants reuse their base piece's hero art.
+        ref = by_id.get(p.get("base")) or p
+        hero = HERO_OVERRIDES.get(ref["id"]) or alias.get(norm(ref["name"])) or alias.get(norm(ref["id"]))
         if not hero:
             missing.append(f"piece {p['id']}")
             continue

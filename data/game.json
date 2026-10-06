@@ -494,6 +494,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/abaddon/abaddon.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -579,6 +580,7 @@
    ],
    "melee": false,
    "model": "models/heroes/ancient_apparition/ancient_apparition.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -666,6 +668,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/axe/axe.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 750,
@@ -756,6 +759,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/bane/bane.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -840,6 +844,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/bh/bh.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -933,6 +938,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/brew/brew.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -1038,6 +1044,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/clinkz/clinkz.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -1133,6 +1140,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/clock/clock.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -1238,6 +1246,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/cm/cm.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -1309,6 +1318,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/dw/dw.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -1388,6 +1398,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/dazzle/dazzle.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -1474,6 +1485,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/eh/eh.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 400,
@@ -1557,6 +1569,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/hw/hw.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -1652,6 +1665,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/mars/mars.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -1761,6 +1775,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/pom/pom.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -1869,6 +1884,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/sd/sd.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -1954,6 +1970,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/ss/ss.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -2037,6 +2054,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/sm/sm.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -2112,6 +2130,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/sb/sb.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -2197,6 +2216,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/tk/tk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -2282,6 +2302,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/tusk/tusk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -2360,6 +2381,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/ww/ww.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -2449,6 +2471,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/wd/wd.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -2570,6 +2593,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/bat/bat.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -2659,6 +2683,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/bm/bm.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -2732,6 +2757,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/bs/bs.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -2831,6 +2857,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ct/ct.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 850,
@@ -2922,6 +2949,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ck/ck.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -3011,6 +3039,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ds/ds.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -3110,6 +3139,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/fv/fv.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -3211,6 +3241,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/fur/fur.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -3296,6 +3327,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/gs/gs.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -3393,6 +3425,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/jugg/jugg.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -3488,6 +3521,7 @@
    ],
    "melee": true,
    "model": "models/heroes/bard/bard_frog_base.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -3582,6 +3616,7 @@
    ],
    "melee": true,
    "model": "models/heroes/life_stealer/life_stealer.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -3663,6 +3698,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/lina/lina.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -3740,6 +3776,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/luna/luna.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -3823,6 +3860,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/meepo/meepo.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -3906,6 +3944,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/muerta/muerta.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -4003,6 +4042,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/oracle/oracle.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -4113,6 +4153,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/puck/puck.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -4226,6 +4267,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/slark/slark.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -4303,6 +4345,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/sniper/sniper.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 450,
@@ -4388,6 +4431,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/shredder/shredder.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 750,
@@ -4477,6 +4521,7 @@
    ],
    "melee": true,
    "model": "models/heroes/tiny/tiny_01/tiny_01.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -4569,6 +4614,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/vs/vs.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -4647,6 +4693,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/wr/wr.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -4750,6 +4797,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/db/db.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -4841,6 +4889,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/dr/dr.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -4954,6 +5003,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/es/es.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -5047,6 +5097,7 @@
    ],
    "melee": false,
    "model": "models/heroes/enigma/enigma.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -5146,6 +5197,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/huskar/huskar.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -5259,6 +5311,7 @@
    ],
    "melee": false,
    "model": "models/heroes/kez/kez_base.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -5352,6 +5405,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/lc/lc.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -5441,6 +5495,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/lyc/lyc.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -5530,6 +5585,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/marci/marci.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -5681,6 +5737,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/naga/naga.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -5770,6 +5827,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/om/om.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -5865,6 +5923,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/pudge/pudge.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1100,
@@ -5952,6 +6011,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/razor/razor.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -6067,6 +6127,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/riki/riki.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -6154,6 +6215,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/rubick/rubick.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 500,
@@ -6228,6 +6290,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/sk/sk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -6329,6 +6392,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/sf/sf.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 600,
@@ -6438,6 +6502,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/slardar/slardar.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -6547,6 +6612,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/tb/tb.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -6641,6 +6707,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/tp/tp.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -6746,6 +6813,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ud/ud.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -6840,6 +6908,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/veno/veno.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 550,
@@ -6931,6 +7000,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/viper/viper.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -7041,6 +7111,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ga/ga.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1050,
@@ -7164,6 +7235,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/am/am.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 850,
@@ -7265,6 +7337,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/br/br.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -7364,6 +7437,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/chen/chen.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -7445,6 +7519,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/dp/dp.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -7596,6 +7671,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/doom/doom.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1050,
@@ -7690,6 +7766,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/dk/dk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -7777,6 +7854,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/earth/earth.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -7871,6 +7949,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/et/et.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -7968,6 +8047,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ember/ember.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -8061,6 +8141,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/light/light.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 650,
@@ -8200,6 +8281,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/kunkka/kunkka.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -8305,6 +8387,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/lich/lich.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -8422,6 +8505,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/lion/lion.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 750,
@@ -8511,6 +8595,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/ld/ld.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -8584,6 +8669,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/mag/mag.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -8683,6 +8769,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/medusa/medusa.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 750,
@@ -8792,6 +8879,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/mk/mk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -8888,6 +8976,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/na/na.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -8971,6 +9060,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/pangolier/pangolier.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 850,
@@ -9070,6 +9160,7 @@
    ],
    "melee": true,
    "model": "models/heroes/phantom_assassin/phantom_assassin.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -9153,6 +9244,7 @@
    ],
    "melee": false,
    "model": "models/heroes/phoenix/phoenix_bird.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 850,
@@ -9280,6 +9372,7 @@
    ],
    "melee": false,
    "model": "models/heroes/snapfire/snapfire.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 800,
@@ -9369,6 +9462,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/storm/storm.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -9454,6 +9548,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/void/void.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 750,
@@ -9559,6 +9654,7 @@
    ],
    "melee": true,
    "model": "models/heroes/abyssal_underlord/abyssal_underlord_v2.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1250,
@@ -9634,6 +9730,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/aw/aw.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -9709,6 +9806,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/disruptor/disruptor.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -9810,6 +9908,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/gyro/gyro.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -9895,6 +9994,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/kael/kael.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -9963,6 +10063,7 @@
    "classes": [],
    "melee": false,
    "model": "models/heroes/wisp/wisp.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 700,
@@ -10063,6 +10164,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/thd/thd.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -10176,6 +10278,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/ts/ts.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 900,
@@ -10268,6 +10371,7 @@
    ],
    "melee": false,
    "model": "models/heroes/morphling/morphling.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -10361,6 +10465,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/nec/nec.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -10470,6 +10575,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/ok/ok.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1100,
@@ -10579,6 +10685,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/pb/pb.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1300,
@@ -10678,6 +10785,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/qop/qop.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -10785,6 +10893,7 @@
    "classes": [],
    "melee": false,
    "model": "models/hero_models/rm/rm.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1050,
@@ -10862,6 +10971,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/spe/spe.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -10949,6 +11059,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/sven/sven.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1200,
@@ -11034,6 +11145,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/tech/tech.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -11131,6 +11243,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/ta/ta.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -11222,6 +11335,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/th/th.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1100,
@@ -11309,6 +11423,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/troll/troll.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1000,
@@ -11414,6 +11529,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/wl/wl.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 850,
@@ -11523,6 +11639,7 @@
    ],
    "melee": true,
    "model": "models/hero_models/snk/snk.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 1300,
@@ -11606,6 +11723,7 @@
    ],
    "melee": false,
    "model": "models/hero_models/zeus/zeus.vmdl",
+   "base": null,
    "stats": [
     {
      "hp": 950,
@@ -11688,6 +11806,244 @@
      "100"
     ],
     "texture": "zuus_thundergods_wrath"
+   }
+  },
+  {
+   "id": "brew_ssr",
+   "name": "Brewmaster ♠ Stout",
+   "cost": 9,
+   "source": "ssr",
+   "races": [
+    "pandaman"
+   ],
+   "classes": [
+    "monk"
+   ],
+   "melee": true,
+   "model": "models/hero_models/brew/brew_ssr.vmdl",
+   "base": "brew",
+   "stats": [
+    {
+     "hp": 3200,
+     "mana": 100,
+     "armor": 4,
+     "magicResist": 0,
+     "damageMin": 200,
+     "damageMax": 240,
+     "attackRate": 1.3,
+     "attackRange": 205,
+     "moveSpeed": 500
+    }
+   ],
+   "skill": {
+    "id": "brew_ssr_3_pandas",
+    "name": "Primal Split",
+    "kind": "active",
+    "header": "Active ability: Activates on Full Mana",
+    "description": "Splits Brewmaster into elements, forming 4 specialized elemental Pandaren warriors of the same Rank to battle for allie.",
+    "lore": "It isn't clear whether Mangix is consciously aware of his potent bond with nature, as it often occurs in the midst of a drunken stupor.",
+    "notes": [
+     "Brewmaster no longer stays on chessboard after casting Primal Split."
+    ],
+    "values": [],
+    "cooldown": [
+     "999"
+    ],
+    "mana": [
+     "100"
+    ],
+    "texture": "brewmaster_primal_split"
+   }
+  },
+  {
+   "id": "ck_ssr",
+   "name": "Chaos Knight ♠ Hellfire",
+   "cost": 9,
+   "source": "ssr",
+   "races": [
+    "demon"
+   ],
+   "classes": [
+    "knight"
+   ],
+   "melee": true,
+   "model": "models/hero_models/ck/ck1.vmdl",
+   "base": "ck",
+   "stats": [
+    {
+     "hp": 2800,
+     "mana": 100,
+     "armor": 6,
+     "magicResist": 0,
+     "damageMin": 160,
+     "damageMax": 440,
+     "attackRate": 1.5,
+     "attackRange": 205,
+     "moveSpeed": 500
+    }
+   ],
+   "skill": {
+    "id": "ck_illusion",
+    "name": "Phantasm",
+    "kind": "active",
+    "header": "Active ability: Activates on Full Mana",
+    "description": "Summons several phantasmal copies of the Chaos Knight from alternate dimensions.",
+    "lore": "Drawing on his battles fought across many worlds and many times, phantasms of the Chaos Knight rise up to quell all who oppose him.",
+    "notes": [],
+    "values": [],
+    "cooldown": [
+     "30"
+    ],
+    "mana": [
+     "100"
+    ],
+    "texture": "chaos_knight_phantasm"
+   }
+  },
+  {
+   "id": "om_ssr",
+   "name": "Ogre Twin Head Mage Dragon ♠",
+   "cost": 9,
+   "source": "ssr",
+   "races": [
+    "ogre",
+    "dragon"
+   ],
+   "classes": [
+    "mage"
+   ],
+   "melee": true,
+   "model": "models/hero_models/om/om11.vmdl",
+   "base": "om",
+   "stats": [
+    {
+     "hp": 3400,
+     "mana": 100,
+     "armor": 3,
+     "magicResist": 0,
+     "damageMin": 220,
+     "damageMax": 300,
+     "attackRate": 1.5,
+     "attackRange": 205,
+     "moveSpeed": 500
+    }
+   ],
+   "skill": {
+    "id": "jakiro_dual_breath",
+    "name": "Ice and Fire",
+    "kind": "active",
+    "header": "Active: Activate on full mana",
+    "description": "Jakiro casts ice and fire spells successively on enemies, Ice spell slows down enemies and fire spell hurts enemies.",
+    "lore": "",
+    "notes": [],
+    "values": [
+     {
+      "label": "Start radius",
+      "values": [
+       "250"
+      ]
+     },
+     {
+      "label": "End radius",
+      "values": [
+       "350"
+      ]
+     },
+     {
+      "label": "Cast Range",
+      "values": [
+       "750"
+      ]
+     },
+     {
+      "label": "Speed",
+      "values": [
+       "1050"
+      ]
+     },
+     {
+      "label": "Fire delay",
+      "values": [
+       "0.2"
+      ]
+     },
+     {
+      "label": "Burn damage",
+      "values": [
+       "200"
+      ]
+     },
+     {
+      "label": "Slow movement speed pct",
+      "values": [
+       "-50"
+      ]
+     },
+     {
+      "label": "Slow attack speed pct",
+      "values": [
+       "-50"
+      ]
+     },
+     {
+      "label": "Speed fire",
+      "values": [
+       "1050"
+      ]
+     }
+    ],
+    "cooldown": [
+     "3"
+    ],
+    "mana": [
+     "100"
+    ],
+    "texture": ""
+   }
+  },
+  {
+   "id": "ss_ssr",
+   "name": "Shadow Shaman ♠ Gemforged",
+   "cost": 9,
+   "source": "ssr",
+   "races": [
+    "troll"
+   ],
+   "classes": [
+    "shaman"
+   ],
+   "melee": false,
+   "model": "models/hero_models/ss/ss11.vmdl",
+   "base": "ss",
+   "stats": [
+    {
+     "hp": 2200,
+     "mana": 100,
+     "armor": 0,
+     "magicResist": 10,
+     "damageMin": 160,
+     "damageMax": 200,
+     "attackRate": 1.4,
+     "attackRange": 400,
+     "moveSpeed": 500
+    }
+   ],
+   "skill": {
+    "id": "ss_ssr_wards",
+    "name": "Mass Serpent Ward",
+    "kind": "active",
+    "header": "Active ability: Activates on Full Mana",
+    "description": "Summons Serpent Wards on every vacant square around the target to attck the enemies.",
+    "lore": "Snake charming was a big part of the Shadow Shamans act; now Rhasta can empower the Snakes to do his bidding.",
+    "notes": [],
+    "values": [],
+    "cooldown": [
+     "10"
+    ],
+    "mana": [
+     "100"
+    ],
+    "texture": "shadow_shaman_mass_serpent_ward"
    }
   }
  ],

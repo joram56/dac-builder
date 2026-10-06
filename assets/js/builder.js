@@ -210,7 +210,10 @@
       n > state.level
         ? `A level ${state.level} courier can only field ${state.level} pieces.`
         : "Pieces on board / pieces allowed at this courier level";
-    const gold = state.board.reduce((sum, e) => sum + pieceById.get(e.id).cost * Math.pow(3, e.star - 1), 0);
+    const gold = state.board.reduce((sum, e) => {
+      const p = pieceById.get(e.id);
+      return sum + (p.source === "ssr" ? p.cost : p.cost * Math.pow(3, e.star - 1));
+    }, 0);
     el("board-cost").textContent = `${gold} gold`;
   }
 
@@ -239,9 +242,13 @@
         <div class="body">
           <div class="name-row">
             <span class="name"><a href="pieces/${p.id}.html" title="Open ${escapeHtml(p.name)} in the wiki">${escapeHtml(p.name)}</a></span>
-            <span class="star-btns">${[1, 2, 3]
-              .map((s) => `<button type="button" data-star="${s}" class="${s <= entry.star ? "on" : ""}" title="${s}-star">★</button>`)
-              .join("")}</span>
+            ${
+              p.source === "ssr"
+                ? '<span class="ssr-tag" title="SSR pieces can\'t be upgraded">SSR</span>'
+                : `<span class="star-btns">${[1, 2, 3]
+                    .map((s) => `<button type="button" data-star="${s}" class="${s <= entry.star ? "on" : ""}" title="${s}-star">★</button>`)
+                    .join("")}</span>`
+            }
           </div>
           <div class="traits">${traitHtml}<button type="button" class="add-trait" title="Add an extra race or class (e.g. from Wheel of Wonder)">+ trait</button></div>
           ${ui.traitMenu === entry.uid ? traitSelect(entry) : ""}
@@ -428,12 +435,12 @@
       pickerEl.innerHTML = '<p class="muted">No pieces match these filters.</p>';
       return;
     }
-    for (let cost = 1; cost <= 5; cost++) {
+    for (const cost of [1, 2, 3, 4, 5, 9]) {
       const group = visible.filter((p) => p.cost === cost);
       if (!group.length) continue;
       const section = document.createElement("section");
       section.className = "picker-group";
-      section.innerHTML = `<h3 class="cost-text-${cost}">${cost} gold</h3><div class="picker-grid"></div>`;
+      section.innerHTML = `<h3 class="cost-text-${cost}">${cost === 9 ? "SSR · 9 gold" : `${cost} gold`}</h3><div class="picker-grid"></div>`;
       const grid = section.querySelector(".picker-grid");
       group.forEach((p) => {
         const owned = onBoard.get(p.id) || 0;
@@ -468,7 +475,7 @@
   }
 
   function sourceLabel(source) {
-    return { dark: "Undead spare", special: "Special", gold: "Golden Heart" }[source] || "";
+    return { dark: "Undead spare", special: "Special", gold: "Golden Heart", ssr: "SSR" }[source] || "";
   }
 
   // ------------------------------------------------------- share links (hash)

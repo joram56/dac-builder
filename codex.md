@@ -10,13 +10,14 @@
 
 1. `~/dac_lua/` holds the unpacked game. See `~/dac_lua/README_WIKI.md` for where everything lives in the game files.
 2. `tools/extract.py` writes `data/game.json`:
-   - Pieces come from `_G.chess_list_by_mana` (normal shop), `_black` (Undead spare pieces, source `dark`) and `_special` (Pandaren spirits, Io; source `special`).
+   - Pieces come from `_G.chess_list_by_mana` (normal shop), `_black` (Undead spare pieces, source `dark`), `_special` (Pandaren spirits, Io; source `special`) and `_G.chess_list_ssr` (source `ssr`).
+   - SSR pieces are a single level-9 unit: cost 9, one stats entry, `base` = the normal piece's id. Their unit name has no star suffix, so the game counts them as a different piece from the normal version for synergies.
    - Each piece's races and classes are its `is_*` abilities in `npc_units_custom.txt`, with stats per star (`chess_x`, `chess_x1`, `chess_x11`).
    - Skills come from `_G.chess_ability_list_base` plus `npc_abilities_custom.txt` values and tooltip labels.
    - Synergy thresholds come from `_G.combo_ability_type`. That table is the source of truth; tooltips are often outdated.
    - Items come from `_G.ITEM_LIST_BY_LEVEL`, relics from `_G.DROP_RELIC_LIST`, talents from `_G.TALENT_TREE`.
    - Display-name typos are fixed in `NAME_FIXES`.
-3. `data/synergies.json` holds the curated per-level text. The `mismatch` field is a player-facing note shown wherever the in-game tooltip says something different. Its level `required` values must match the thresholds in `game.json`; `build_site.py` falls back to the tooltip text if a level is missing.
+3. `data/synergies.json` holds the curated per-level text, plus optional `details` sections (title, intro, groups of bullet points) shown on the synergy page. The `mismatch` field is a player-facing note shown wherever the in-game tooltip says something different. Its level `required` values must match the thresholds in `game.json`; `build_site.py` falls back to the tooltip text if a level is missing.
 
 ## Builder (`assets/js/builder.js`)
 
