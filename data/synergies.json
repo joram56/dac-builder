@@ -1,0 +1,777 @@
+[
+ {
+  "id": "aqir",
+  "name": "Aqir",
+  "perk": "Infection",
+  "summary": "Dying allies hatch Aqir bugs when another copy of them is still on the board.",
+  "innate": "",
+  "note": "Temporary pieces (summons, timed units) and copies are never Infected. A hatched Aqir starts with 0 mana and lasts 10-20 seconds.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All non-Aqir allies are Infected. When an Infected piece dies while another Infected copy of the same piece (any star) is still on your board, a random Aqir hatches from the body. Its level matches the strongest surviving copy.",
+    "mismatch": "The tooltip says the hatchling matches the dying piece's level. It actually matches the strongest surviving copy, and only lasts 10-20 seconds."
+   },
+   {
+    "required": 4,
+    "text": "Your Aqir pieces are Infected too. When an Aqir dies while another copy of it is on your board (Infected or not), it hatches a random Aqir one level higher than the strongest surviving copy.",
+    "mismatch": "The tooltip says the hatchling “can be” one level higher at random. It is always exactly one level higher when an Aqir dies."
+   }
+  ]
+ },
+ {
+  "id": "beast",
+  "name": "Beast",
+  "perk": "Power of the Wild",
+  "summary": "More attack damage for your whole team; at 6, attacks shred physical defence.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies, including summons, deal +10% attack damage.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies, including summons, deal another +25% attack damage (+35% in total).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Physical damage from your allies stacks a debuff on the target, up to 10 stacks. Each stack makes it take +10% physical damage, up to +100%.",
+    "mismatch": "The tooltip says attacks add the stacks, but any physical damage does, including physical spells."
+   }
+  ]
+ },
+ {
+  "id": "centaur",
+  "name": "Centaur",
+  "perk": "Stampede",
+  "summary": "Centaurs charge into the biggest enemy cluster at battle start, stunning on the way.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "At the start of battle, each Centaur charges toward the square with the most enemies around it. While charging it has +50% move speed and is magic immune, and it stuns enemies it passes (within 205 range) for 1s.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "Every move by your melee pieces (attack range 205 or less) becomes a Stampede charge: faster, magic immune, and stunning enemies they pass for 1s.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "demon",
+  "name": "Demon",
+  "perk": "Fel Power",
+  "summary": "A lone Demon type turns your Demons' attacks into pure damage.",
+  "innate": "",
+  "note": "Only works if your board has exactly one Demon type. Copies of the same Demon are fine. Each different enemy Demon Hunter counts as another Demon type, so one enemy Demon Hunter switches your Demons off. If you have 2 or more Demon Hunters yourself, your Demons always stay on.",
+  "levels": [
+   {
+    "required": 1,
+    "text": "Your Demons' attacks deal pure damage. Fel Power: +15% attack damage per stack, up to 7 stacks. A stack is each copy of that Demon on your board, counting itself. With 2+ Demon Hunters, stacks count all your Demons plus each enemy Demon Hunter.",
+    "mismatch": "The tooltip doesn't explain stacks: each copy of the same Demon on your board is one stack. Stacks refresh every 2 seconds, so the first moments of a battle get no bonus."
+   }
+  ]
+ },
+ {
+  "id": "draenei",
+  "name": "Draenei",
+  "perk": "Blessing of the Naaru",
+  "summary": "Draenei drain the nearest enemy; at 4, healing your team receives bursts out as damage.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Every 4s, each Draenei hits the nearest enemy for 50 + 2% of that enemy's max HP as pure damage and heals itself for the same amount.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies store the healing they receive. Once 100 or more is stored, it is released as pure damage (up to 300) to every enemy within 300 range. 5s cooldown.",
+    "mismatch": "The tooltip says the damage is split among nearby enemies. In fact every enemy within range takes the full amount (max 300, 5-second cooldown)."
+   }
+  ]
+ },
+ {
+  "id": "dragon",
+  "name": "Dragon",
+  "perk": "Attunement",
+  "summary": "Start battles with 100 mana, so skills fire immediately.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Your Dragons gain +100 mana when battle starts, usually enough to cast right away.",
+    "mismatch": ""
+   },
+   {
+    "required": 5,
+    "text": "All your pieces gain +100 mana when battle starts.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "dwarf",
+  "name": "Dwarf",
+  "perk": "Take Aim",
+  "summary": "Long-range Dwarves that hit harder the further away the target is.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Dwarves gain +200 attack range. Their physical damage grows with distance to the target: about +10.6% per square in a straight line (+15% per diagonal square).",
+    "mismatch": "The tooltip says +15% per square. The bonus grows smoothly with distance: about +10.6% per square in a straight line, +15% per diagonal square. It applies to Dwarves' physical spells too."
+   }
+  ]
+ },
+ {
+  "id": "element",
+  "name": "Elemental",
+  "perk": "Elemental Essence",
+  "summary": "Attackers hitting your pieces can be turned to stone.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "When a melee attacker hits one of your Elementals, there's a 15% chance it turns to stone (stunned) for 3s.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "When any attacker (melee or ranged) hits one of your pieces, there's a 15% chance it turns to stone for 4s. Elementals roll this and the (2) effect separately.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Stone lasts 1s longer, and your pieces deal double damage to any petrified enemy.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "elf",
+  "name": "Elf",
+  "perk": "Evasion",
+  "summary": "Elves gain large amounts of evasion.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Your Elves gain +25% evasion.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Your Elves gain another +40% evasion, about 55% in total with the (3) bonus.",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "When an Elf dodges an attack, it turns invisible for 1s and summons an illusion of the attacker on your side for 7s. The illusion deals 50% damage and has no mana. 5s cooldown per Elf.",
+    "mismatch": "The tooltip describes a single mirrored attack. The game actually summons a 7-second illusion of the attacker, and each Elf can only do this every 5 seconds."
+   }
+  ]
+ },
+ {
+  "id": "goblin",
+  "name": "Goblin",
+  "perk": "Nanobots",
+  "summary": "Bonus armor and HP regeneration, first for one melee ally, then for everyone.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 3,
+    "text": "One random melee ally (attack range 250 or less) gets +10 armor and +20 HP regen.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "All allies get +10 armor and +20 HP regen. This stacks with the (3) bonus on the chosen ally.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "god",
+  "name": "God",
+  "perk": "Overweening Superiority",
+  "summary": "Big skill cooldown reduction for your whole team.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies: skill cooldowns -40%.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies get another -40% skill cooldown. It multiplies with the (2) bonus, for -64% in total.",
+    "mismatch": "The tooltip text is the same as level 2, and doesn't say the two levels multiply (-64% total, not -80%)."
+   },
+   {
+    "required": 6,
+    "text": "All allies: right after casting their skill, the remaining cooldown of that skill and of all their items is cut by 60%.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "harpy",
+  "name": "Harpy",
+  "perk": "Windfury",
+  "summary": "Single-target spells hit extra targets.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies: single-target spells hit 1 extra target.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "Single-target spells hit 1 more extra target (2 extra in total).",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "human",
+  "name": "Human",
+  "perk": "Spark of Mind",
+  "summary": "Bonus courier XP every round, so you level up faster.",
+  "innate": "",
+  "note": "Humans give courier XP rather than combat stats. XP from Humans can take you past the normal level cap.",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Gain 2 courier XP at the start of every round.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "If you win a battle on your own board (creep rounds count) with at least one Human still alive, gain (courier level - 2) XP at the start of the next round.",
+    "mismatch": "The tooltip doesn't say that at least one Human must survive the win. Creep round wins also count."
+   }
+  ]
+ },
+ {
+  "id": "kobold",
+  "name": "Kobold",
+  "perk": "Divided we stand",
+  "summary": "Pairs of identical pieces summon an extra copy at battle start.",
+  "innate": "",
+  "note": "A 'pair' means identical pieces (same piece and same star) on your board. Kobolds don't auto-combine on the bench.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "At battle start, each group of identical pieces on your board with an even count summons one extra copy of that piece for the battle. The copy has no items. This works for any piece, not just Kobolds.",
+    "mismatch": "The tooltip says “each two paired” pieces. Each group of identical pieces with an even count summons one copy, so 4 identical pieces still give only one copy and 3 give none."
+   },
+   {
+    "required": 4,
+    "text": "Each unpaired Kobold copies a random unpaired non-Kobold ally of the same star. The Kobold turns into that piece (frozen in wax for 4-6s, expires after 15-20s), and an extra copy of that ally is also summoned. Each ally can only be copied once.",
+    "mismatch": "The tooltip doesn't say that the reshaped Kobold is frozen for 4-6 seconds and expires after 15-20 seconds."
+   }
+  ]
+ },
+ {
+  "id": "naga",
+  "name": "Naga",
+  "perk": "Scale Armor",
+  "summary": "Magic resistance for your whole team; Nagas reflect damage at 6.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies gain +15% magic resistance.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies gain another +35% magic resistance, about 45% in total with the (2) bonus because resistances multiply.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Naga pieces only: when they take non-pure damage, they return pure damage to the attacker equal to the damage taken x their magic resistance x 1.5.",
+    "mismatch": "The tooltip doesn't say that only Naga pieces reflect damage."
+   }
+  ]
+ },
+ {
+  "id": "nraqi",
+  "name": "Faceless",
+  "perk": "Whisper of Darkness",
+  "summary": "If it's your only synergy, your pieces ignore most negative effects.",
+  "innate": "",
+  "note": "Only works if Faceless is your only active synergy. One Wizard is ignored, but 2 or more Wizards switch Faceless off.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies become immune to negative effects during combat. Exceptions: Undead Plague, Mage magic-resistance debuffs and a few skill-specific effects still apply.",
+    "mismatch": "The tooltip says immune to all negative effects. A few still apply, including Undead Plague and the Mage magic-resistance reduction. It also doesn't say that 2+ Wizards switch Faceless off."
+   }
+  ]
+ },
+ {
+  "id": "ogre",
+  "name": "Ogre",
+  "perk": "Iron Fist",
+  "summary": "Ogres eat adjacent weaker allies to gain their health and damage.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "At battle start, each Ogre eats every adjacent non-Ogre ally (up, down, left, right) of equal or lower level. It gains 60% of their current HP as max HP and 60% of their attack damage. If it survives a won battle, the eaten pieces' levels are added to its own when working out damage to the losing player.",
+    "mismatch": "The tooltip says allies of lower level. Ogres also eat allies of equal level. The extra damage to the losing player is smaller than the tooltip suggests."
+   }
+  ]
+ },
+ {
+  "id": "orc",
+  "name": "Orc",
+  "perk": "Battle Hardened",
+  "summary": "Extra max HP for your whole team.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies gain +100 max HP.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies gain another +400 max HP (+500 total).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "All allies gain +10 max HP for every point of HP your courier has lost, up to +800.",
+    "mismatch": "The tooltip doesn't mention the +800 HP cap."
+   }
+  ]
+ },
+ {
+  "id": "pandaman",
+  "name": "Pandaren",
+  "perk": "Hospitality",
+  "summary": "A chance each round to receive free pieces matching your board.",
+  "innate": "",
+  "note": "Rolls happen at the start of every round. Caught pieces go to your bench and are removed from the shared pool. A Lucky Pendant on any of your pieces raises the chance.",
+  "levels": [
+   {
+    "required": 1,
+    "text": "Each round, a chance to receive a random piece that shares a race with one of your board pieces. Pieces already on your board and pieces you already have at 3 stars are skipped. The chance starts at ~6.8%, rises after every miss and resets when you catch something.",
+    "mismatch": "The tooltip gives no numbers. The base chance is about 7%, and it grows each round you miss."
+   },
+   {
+    "required": 2,
+    "text": "Also, each Pandaren on your board has a 15% chance (same pity and luck multipliers) to bring a copy of itself.",
+    "mismatch": "The tooltip gives no numbers. Each Pandaren has a 15% base chance, with the same miss bonus."
+   }
+  ]
+ },
+ {
+  "id": "satyr",
+  "name": "Satyr",
+  "perk": "Fear",
+  "summary": "Satyrs fear groups of nearby enemies.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "When 2 or more enemies are within 200 range of a Satyr, they are feared for 3s (disarmed, silenced and wandering randomly). Each Satyr then has a random 4-8s cooldown. Magic-immune enemies are not affected.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "tauren",
+  "name": "Tauren",
+  "perk": "Totem of the Clan",
+  "summary": "Summons totems that taunt, silence and disarm enemies.",
+  "innate": "",
+  "note": "Totems are spawned once per team (not once per Tauren), at the start of battle. Totems take only 1 damage per melee hit and 2 per ranged hit.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Summons a Scarecrow Totem that taunts enemies. Its HP is 2.5 x the number of enemy pieces (counting up to 8, so max 20).",
+    "mismatch": "The tooltip calls it a Taunt Totem; in game it is the Scarecrow Totem. Its HP counts at most 8 enemy pieces."
+   },
+   {
+    "required": 4,
+    "text": "Also summons a Woodpecker Totem (29% chance when an enemy casts: silence 3s + 200 magic damage) and a Horn Totem (10% chance when an enemy attacks: disarm 2s + 100 physical damage). Their HP equals the number of enemy pieces (max 8).",
+    "mismatch": "The tooltip says the Horn Totem disarms for 3 seconds and deals 250 damage. The game uses 2 seconds and 100 damage."
+   }
+  ]
+ },
+ {
+  "id": "troll",
+  "name": "Troll",
+  "perk": "Voodoo Frenzy",
+  "summary": "Attack speed for your whole team, ramping up at 6.",
+  "innate": "",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies gain +20 attack speed.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies gain another +50 attack speed (+70 total).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "All allies gain +20 attack speed for each attack they land, for the rest of the battle, up to +120.",
+    "mismatch": "The tooltip says up to 7 stacks. Because of a bug, only 6 stacks give attack speed, so the maximum is +120 rather than +140."
+   }
+  ]
+ },
+ {
+  "id": "undead",
+  "name": "Undead",
+  "perk": "Plague",
+  "summary": "Lowers the max HP of every non-Undead piece on both sides.",
+  "innate": "",
+  "note": "Hits every non-Undead piece on both sides, including your own, except pieces holding Ascetic's Cap. Only base HP is reduced.",
+  "levels": [
+   {
+    "required": 3,
+    "text": "All non-Undead pieces on the board lose 10% max HP.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "They lose another 30% (-40% total).",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "Plagued pieces also lose 5% max HP every 2s, down to a minimum of 5% of their base max HP.",
+    "mismatch": "The tooltip says every 2.5 seconds; the game uses every 2 seconds."
+   }
+  ]
+ },
+ {
+  "id": "assassin",
+  "name": "Assassin",
+  "perk": "Coup de Grace",
+  "summary": "Assassins leap behind the enemy line and land critical hits.",
+  "innate": "At the start of each battle, Assassins leap behind the enemy lineup with their first move. (The guaranteed critical hit after the leap needs the (3) Assassin bonus or higher.)",
+  "note": "Crit chances can be raised by luck effects such as the Lucky Pendant. The 15% rolls from (3) and (6) are separate; when both proc, the higher crit applies.",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Assassins get a 15% chance to crit for 250% damage. Their first hit after the leap always crits.",
+    "mismatch": "The Assassin trait says the first hit after the leap always crits, but that only happens once you have 3 Assassins."
+   },
+   {
+    "required": 6,
+    "text": "Assassins get an extra, separate 15% chance to crit for 400% damage, which stacks with the (3) bonus. The post-leap crit is 250% or 400% at random.",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "Assassins can leap again after getting a kill, or when a 5-10 second timer runs out. Every post-leap hit uses the highest crit the piece has (at least 400%).",
+    "mismatch": "The tooltip says “a certain duration”. The first re-leap timer is 9 seconds, then 5-10 seconds."
+   }
+  ]
+ },
+ {
+  "id": "demonhunter",
+  "name": "Demon Hunter",
+  "perk": "Shuttered Soul",
+  "summary": "Protects your Demon synergy; at 4, all your damage becomes pure.",
+  "innate": "Each Demon Hunter counts as an extra Demon type for the enemy, which can break their single-Demon (Fel Power) bonus.",
+  "note": "",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Your Demon bonus stays active no matter how many different Demons you field, and enemy Demon Hunters can't break it. Fel Power stacks count every friendly Demon plus enemy Demon Hunters (max 7).",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies deal pure damage. Physical and magical damage is turned into pure damage at its full value, so it ignores armor and magic resistance.",
+    "mismatch": "The tooltip doesn't say that damage is converted before armor and magic resistance, so armor and magic resistance reductions (Hunter, Mage) no longer add damage."
+   }
+  ]
+ },
+ {
+  "id": "druid",
+  "name": "Druid",
+  "perk": "Synergy",
+  "summary": "Combine Druids with only two copies instead of three.",
+  "innate": "When you make a ★★★ Druid, the remaining copies of that Druid are not removed from the shared pool.",
+  "note": "Only different Druids on the board count. The 3-Wizard “unlock all levels” effect doesn't help Druid combining, because combining happens during preparation.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Two identical Druid★ combine into a Druid★★. An Io★ plus one Druid★ also combine.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "Two identical Druid★★ combine into a Druid★★★. An Io★★ plus one Druid★★ also combine.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Two identical Druid★★★ combine into the Altar of Spirits. It gets Altar Power stacks equal to the Druid★★★'s level (5-8) and removes all Druids from the shared pool. Each stack means 10% less damage taken and 10% more damage dealt, multiplying (8 stacks: 43% damage taken, 214% damage dealt). At battle start the Altar shares its stacks with nearby friendly Druids it tethers.",
+    "mismatch": "The tooltip suggests the Altar Power stacks add up; they multiply."
+   }
+  ]
+ },
+ {
+  "id": "hunter",
+  "name": "Hunter",
+  "perk": "Aimed Shot",
+  "summary": "Hunters pick off low-HP targets with armor-shredding precise shots.",
+  "innate": "Hunters always attack the enemy with the lowest current health within attack range. Wizards and other low-priority units are picked last.",
+  "note": "Debuffs from (3) and (6) are separate and stack. When both bonuses are active, one precise shot applies both (-13 armor).",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Hunters' attacks have a 50% chance to be a precise shot: it can't miss and gives -5 armor for 5s.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Hunters get a separate 80% chance for a precise shot: it can't miss and gives -8 armor for 8s. This stacks with the (3) debuff.",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "Precise shots also knock the target back 1 grid and trigger an extra attack (at most once every 0.5s).",
+    "mismatch": "One in-game buff description says 2 grids of knockback; the game uses 1."
+   }
+  ]
+ },
+ {
+  "id": "knight",
+  "name": "Knight",
+  "perk": "Divine Protection",
+  "summary": "Damage-reducing shields that proc during combat.",
+  "innate": "With the (2) Knight bonus, a Knight next to another friendly Knight starts the battle with a shield. It lasts until the Knight starts acting.",
+  "note": "A shield reduces physical and magical damage taken by 35% (pure damage isn't reduced). Shields from different levels multiply (two shields: 42% damage taken, three: 27%). Each level rolls separately every 3 seconds.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Knights get a 25% chance every 3s to gain a 3s shield (-35% physical and magical damage taken).",
+    "mismatch": "The in-game note says shields block 50% of damage; they block 35%. The Knight trait says “nearby allies”, but the battle-start shield needs an adjacent Knight and 2 Knights on the board."
+   },
+   {
+    "required": 4,
+    "text": "All allies get a separate 25% chance every 3s to gain a 3s shield.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "All allies get another separate 25% chance every 3s to gain a shield. Every shield proc heals the unit for 500.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "mage",
+  "name": "Mage",
+  "perk": "Magical Vulnerability",
+  "summary": "Lowers the magic resistance of all enemies.",
+  "innate": "Each friendly Mage on the board (including itself) gives Mages +10% mana gain, up to +60%.",
+  "note": "",
+  "levels": [
+   {
+    "required": 3,
+    "text": "All enemies get -30% magic resistance.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "All enemies get another -35% magic resistance (-65% in total).",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "Enemies freeze (stunned) whenever they take magic damage, for magic damage ÷ 400 seconds (at least 0.2s).",
+    "mismatch": "The in-game note says the freeze lasts at least 0.5 seconds; the minimum is 0.2 seconds."
+   }
+  ]
+ },
+ {
+  "id": "mech",
+  "name": "Mech",
+  "perk": "Heart of the Machine",
+  "summary": "Win with a Mech alive to earn a free shop refresh, or later a Legendary pick.",
+  "innate": "Mechs receive +50% healing from all sources.",
+  "note": "Rewards are given at the start of the next preparation phase. The in-game description calls these pieces “Inventors”.",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Win a round with at least one Mech still alive to get a Heart of the Machine (a free shop refresh).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "The reward has a chance to be a Golden Heart (pick from 5 random Legendary pieces): 20% per courier level above 5 (level 6 = 20%, level 10+ = 100%). Otherwise you get a normal Heart.",
+    "mismatch": "The tooltip says level 6 always gives the Golden Heart. It is a chance: 20% for each courier level above 5, so 0% at level 5 and 100% at level 10."
+   }
+  ]
+ },
+ {
+  "id": "monk",
+  "name": "Monk",
+  "perk": "Drunken Stagger",
+  "summary": "Monk hits can execute low-HP enemies or halve healthy ones.",
+  "innate": "",
+  "note": "Proc chances grow with the damage dealt and can be raised by luck effects. (2) only works on targets below 20% HP. (4) only works on targets at 40% HP or higher.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Melee Monks have a chance to instantly kill an enemy below 20% HP when they damage it. The chance is higher for bigger hits and lower target HP (roughly 10-23% for a 150-damage hit at 15%-5% HP).",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All Monks have a chance to halve the current HP of an enemy at 40%+ HP when they damage it. Chance = 20% x √(damage/100) (for example 20% for 100 damage, 40% for 400).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Monks heal for the HP removed by their halving effect.",
+    "mismatch": "The heal from an instant kill is calculated after the target dies, so in practice only the halving effect heals."
+   }
+  ]
+ },
+ {
+  "id": "priest",
+  "name": "Priest",
+  "perk": "Salvation",
+  "summary": "With empty board slots, Priests mind control enemies and earn Tangos.",
+  "innate": "Priests can't be mind controlled.",
+  "note": "A piece's level is its cost, +2 for each extra star (★★★ 5-cost = level 9).",
+  "levels": [
+   {
+    "required": 2,
+    "text": "When you lose a round, take damage and survive while you have an empty board slot, you get a Tango (restores 1-8 courier HP).",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "At battle start, one Priest per empty board slot (highest level first) mind controls the highest-level enemy at or below its own level. The control lasts (Priest level x 2 + 1) seconds and ends early if the Priest dies.",
+    "mismatch": "The tooltip doesn't mention that invisible enemies and Tidehunter can't be controlled, or that targeting an enemy Priest wastes the attempt."
+   }
+  ]
+ },
+ {
+  "id": "shaman",
+  "name": "Shaman",
+  "perk": "Hex",
+  "summary": "After casting, Shamans transform into a stronger random piece.",
+  "innate": "Shamans cast their skill with 75% of the normal mana.",
+  "note": "Only permanent pieces transform, and transformed pieces can't transform again. The new form keeps the HP % and any race/class buffs.",
+  "levels": [
+   {
+    "required": 3,
+    "text": "After casting its skill or using an active item, a Shaman spends about 1.25s transforming into a random piece 2 levels higher (capped by your courier level and at 9). The new form has no items (your items are kept safe) and dies after 20-25 seconds.",
+    "mismatch": "The tooltip doesn't say the new form only lasts 20-25 seconds. The transformation takes about 1.25 seconds, not 1.5."
+   },
+   {
+    "required": 6,
+    "text": "The transformed piece keeps its items, but each one becomes a random item 2 tiers higher.",
+    "mismatch": ""
+   }
+  ]
+ },
+ {
+  "id": "warlock",
+  "name": "Warlock",
+  "perk": "Soul Leech",
+  "summary": "Lifesteal for your whole team; Warlocks steal max HP at 6.",
+  "innate": "At battle start, a Warlock at full HP gives up 25% of its current HP to gain +50 mana (max 100).",
+  "note": "Lifesteal works on all damage (attacks and spells), except Monk Drunken Stagger and Draenei (4) damage.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "All allies heal for 5% of all damage they deal.",
+    "mismatch": ""
+   },
+   {
+    "required": 4,
+    "text": "All allies get +20% more lifesteal (25% in total).",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Warlocks steal max HP equal to 50% of all damage they deal: the target loses that much max HP and the Warlock gains it.",
+    "mismatch": "The tooltip says on every attack. It works on all damage, including spells."
+   }
+  ]
+ },
+ {
+  "id": "warrior",
+  "name": "Warrior",
+  "perk": "Fortified Armor",
+  "summary": "Warriors gain armor; at 9, all allies reflect damage.",
+  "innate": "Below 50% HP, Warriors get double the armor from Fortified Armor.",
+  "note": "",
+  "levels": [
+   {
+    "required": 3,
+    "text": "Warriors get +3 armor, doubled to +6 below 50% HP.",
+    "mismatch": ""
+   },
+   {
+    "required": 6,
+    "text": "Warriors get another +12 armor: +15 in total, or +30 below 50% HP.",
+    "mismatch": ""
+   },
+   {
+    "required": 9,
+    "text": "All allies reflect pure damage equal to 1.5x their current armor every time they take physical or magical damage (3x below 50% HP).",
+    "mismatch": "The tooltip suggests only Warriors reflect. All allies do, and the reflect doubles to 3× armor below 50% HP."
+   }
+  ]
+ },
+ {
+  "id": "wizard",
+  "name": "Wizard",
+  "perk": "Something from Nothing",
+  "summary": "Lowers synergy requirements, or maxes out your only synergy.",
+  "innate": "Enemies attack Wizards last: they count as low-priority targets.",
+  "note": "Wizard rules are applied at the start of each battle. The 2-Wizard bonus also counts during preparation, for example for Druid combining, Human XP and Pandaren rolls.",
+  "levels": [
+   {
+    "required": 2,
+    "text": "Any other race/class level that needs 4 or more pieces is unlocked with one fewer, as long as you already have at least 3 (Demon excluded).",
+    "mismatch": ""
+   },
+   {
+    "required": 3,
+    "text": "If exactly one non-Wizard race or class is active, all of its levels are unlocked.",
+    "mismatch": "The tooltip says 4 Wizards; only 3 are needed."
+   }
+  ]
+ }
+]

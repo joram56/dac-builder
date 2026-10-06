@@ -1,0 +1,47 @@
+<div class="builder">
+  <section class="builder-main">
+    <div class="panel board-panel">
+      <div class="board-toolbar">
+        <h1>Team builder</h1>
+        <label class="inline-field">Courier level
+          <select id="level"></select>
+        </label>
+        <span class="stat-pill" id="board-count" title="Pieces on board / pieces allowed at this courier level">0 / 10</span>
+        <span class="stat-pill" id="board-cost" title="Total gold value of the pieces on the board">0 gold</span>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" id="share-btn">Copy share link</button>
+        <button type="button" class="btn ghost" id="clear-btn">Clear board</button>
+      </div>
+      <div id="board" class="board" aria-live="polite"></div>
+      <div class="save-row">
+        <input id="build-name" type="text" placeholder="Build name, e.g. Mage Elves" aria-label="Build name">
+        <button type="button" class="btn" id="save-btn">Save</button>
+        <select id="saved-builds" aria-label="Saved builds"><option value="">Saved builds…</option></select>
+        <button type="button" class="btn ghost" id="load-btn">Load</button>
+        <button type="button" class="btn ghost" id="delete-btn">Delete</button>
+        <span id="save-status" class="muted small" role="status"></span>
+      </div>
+    </div>
+
+    <div class="panel picker-panel">
+      <div class="picker-head">
+        <h2>Add pieces</h2>
+        <input id="picker-search" type="search" placeholder="Search by name…" aria-label="Search pieces">
+        <div class="chip-row" id="cost-filters"></div>
+        <label class="check"><input type="checkbox" id="show-special"> Show special pieces</label>
+        <button type="button" class="link-btn" id="picker-clear">Clear filters</button>
+      </div>
+      <div class="trait-filter-rows">
+        <div class="filter-row"><span class="filter-label">Race</span><div class="chip-row" id="race-filters"></div></div>
+        <div class="filter-row"><span class="filter-label">Class</span><div class="chip-row" id="class-filters"></div></div>
+      </div>
+      <p class="muted small picker-hint">Click a piece to add it. A green trait icon means adding it would unlock a new synergy level.</p>
+      <div id="picker"></div>
+    </div>
+  </section>
+
+  <aside class="panel builder-side">
+    <h2>Synergies</h2>
+    <div id="synergy-list"></div>
+  </aside>
+</div>

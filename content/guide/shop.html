@@ -1,0 +1,34 @@
+<h1>Shop &amp; odds</h1>
+<p class="lede">At the start of every preparation round your shop is refreshed with 5 random pieces. What it can offer depends on your courier level and on what's left in the shared pool.</p>
+
+<h2>Shop odds by courier level</h2>
+<p>The chance for each shop slot to be a piece of each cost:</p>
+{{shop_odds_table}}
+<p class="muted small">Levels above 10 can only be reached with the Flourish talent; from level 11 the odds stop changing. If a cost tier has no pieces left that you can get (for example because it's sold out or <a href="special.html#dismiss">dismissed</a>), the slot is rolled again, so real odds shift a little late in the game.</p>
+
+<h2>Rerolling and locking</h2>
+<ul>
+  <li><strong>Reroll</strong> costs 2 gold and gives you 5 new pieces. Pieces from the panel you just rerolled away won't show up in the very next panel.</li>
+  <li><strong>Lock</strong> keeps your current panel when the next round starts, so you can come back for a piece you can't afford yet. Rerolling unlocks it.</li>
+  <li>The free refresh at the start of each round always happens unless the shop is locked.</li>
+</ul>
+
+<h2>The shared pool</h2>
+<p>All 8 players draw from one shared pool of pieces. When someone buys a piece, that copy is gone for everyone until it is sold back. By default the pool holds:</p>
+{{pool_table}}
+<ul>
+  <li><strong>Legendary rotation.</strong> Only 10 of the 5-cost pieces are in each game; the rest are removed at random. Five of the ten are revealed at the start. The first player to recruit a hidden one reveals it and gets a 5-gold bonus.</li>
+  <li><strong>★★★ monopoly.</strong> When anyone makes a ★★★ piece, every remaining copy of that piece is removed from the pool. They come back if that ★★★ is sold. Druids are exempt.</li>
+  <li><strong>Selling</strong> returns copies to the pool: 1 for a ★, 3 for a ★★, 9 for a ★★★.</li>
+  <li>The game's server can change the pool size for a lobby, so treat these numbers as defaults.</li>
+</ul>
+
+<h2>Bad-luck protection</h2>
+<p>The shop works a bit like a deck of cards. For each cost tier, the game tracks how often you've been offered each piece. Once you've seen the pieces of a tier more than about once each on average, the next draw of that cost is steered to the piece you've seen the least (if it's still in the pool and not dismissed). When almost every piece of a tier has been seen, the tracking starts over.</p>
+<p>The draw doesn't look at rank, account, VIP status or win streaks. Everyone has the same odds.</p>
+
+<h2>Rare shop pieces</h2>
+<ul>
+  <li><a href="../pieces/io.html">Io</a> has a 0.2% chance to appear in any shop slot, at any level. The Radiance talent raises this.</li>
+  <li>“SSR” versions of Chaos Knight, Shadow Shaman, Brewmaster and Ogre Magi can appear from courier level 7 at a chance of 1 in 100 million per slot.</li>
+</ul>

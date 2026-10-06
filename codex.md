@@ -1,187 +1,39 @@
-# Codex Notes
+# Notes for code agents
 
-This file is for a future LLM/code agent working on this project.
+## Project type
 
-## Project Type
+- Static site on GitHub Pages (custom domain in `CNAME`). No backend, no JS build step, no npm.
+- Pages are **generated** by `tools/build_site.py` and committed. Edit the generator, `content/`, `data/synergies.json` or the hand-written assets, then re-run the generator. Never hand-edit generated HTML, `assets/js/data.js` or `assets/js/search-index.js`.
+- Python 3.12+ (the generator uses backslashes inside f-string expressions). Pillow is only needed by `tools/images.py`.
 
-- Plain static site
-- No backend
-- Intended for GitHub Pages hosting
-- State persistence uses browser `localStorage`
+## Data pipeline
 
-## Main Files
+1. `~/dac_lua/` holds the unpacked game. See `~/dac_lua/README_WIKI.md` for where everything lives in the game files.
+2. `tools/extract.py` writes `data/game.json`:
+   - Pieces come from `_G.chess_list_by_mana` (normal shop), `_black` (Undead spare pieces, source `dark`) and `_special` (Pandaren spirits, Io; source `special`).
+   - Each piece's races and classes are its `is_*` abilities in `npc_units_custom.txt`, with stats per star (`chess_x`, `chess_x1`, `chess_x11`).
+   - Skills come from `_G.chess_ability_list_base` plus `npc_abilities_custom.txt` values and tooltip labels.
+   - Synergy thresholds come from `_G.combo_ability_type`. That table is the source of truth; tooltips are often outdated.
+   - Items come from `_G.ITEM_LIST_BY_LEVEL`, relics from `_G.DROP_RELIC_LIST`, talents from `_G.TALENT_TREE`.
+   - Display-name typos are fixed in `NAME_FIXES`.
+3. `data/synergies.json` holds the curated per-level text. The `mismatch` field is a player-facing note shown wherever the in-game tooltip says something different. Its level `required` values must match the thresholds in `game.json`; `build_site.py` falls back to the tooltip text if a level is missing.
 
-- `index.html`: page structure and panel layout
-- `styles.css`: all layout and visual styling
-- `app.js`: application state, rendering, filtering, save/load logic, synergy evaluation
-- `units.js`: canonical unit dataset
-- `synergies.js`: canonical synergy definitions and perk text
+## Builder (`assets/js/builder.js`)
 
-## Data Model
+- State is `{ level, board: [{ id, star, extra: [synergyId] }] }`. Duplicates are allowed: they matter for Kobold, but count once for synergies.
+- `evaluate()` mirrors `AddComboAbility()` in `addon_game_mode.lua`:
+  - Count different piece ids per synergy.
+  - With 2 Wizards, each level needing 4 or more gets +1 to the count once you have 3. This doesn't apply to Demon or Wizard.
+  - Demon is active only with exactly 1 Demon type, or 2+ of your own Demon Hunters.
+  - The "only active synergy" check ignores Wizard. With 3 Wizards, that sole synergy unlocks every level.
+  - Faceless is active only if it is the sole synergy and you have fewer than 2 Wizards.
+- Share links use `#l=<level>&b=id*star~extra,...`. Wiki "Open in builder" links use `index.html#b=<id>`.
+- Saves live in localStorage `dac_builder_builds_v2`. Old saves from `dac_builder_saved_builds` are migrated once.
 
-### Units
+## Known facts worth remembering (verified in the game code)
 
-Units are defined in `units.js` as `window.UNITS_BY_COST`.
-
-Structure:
-
-```js
-{
-  "1": [
-    { name: "Mirana", race: ["Elf"], class: ["Hunter"] }
-  ]
-}
-```
-
-Important points:
-
-- Units are grouped by cost.
-- `race` and `class` are arrays because units can have multiple traits.
-- Some units may have empty `race` or `class` arrays.
-- Keep `units.js` as the single source of truth for base unit traits.
-
-### Synergies
-
-Synergies are defined in `synergies.js` as `window.SYNERGY_DEFS`.
-
-Structure:
-
-```js
-{
-  name: "Hunter",
-  type: "class",
-  levels: [
-    { required: 3, perk: "..." }
-  ]
-}
-```
-
-Important points:
-
-- `type` is either `race` or `class`.
-- The renderer only shows synergies that exist in `synergies.js`.
-- If a race/class exists on a unit but is missing from `synergies.js`, it will not appear in the synergy panel.
-
-## Current UI Structure
-
-Top-level layout:
-
-- Header
-- Build save/load controls
-- Two-column main area
-
-Left column:
-
-- `Current Build`
-- `Unit Browser`
-
-Right column:
-
-- `Synergies`
-
-This layout is intentional. The unit browser should stay directly below the current build, and the synergy panel is allowed to grow independently on the right.
-
-## Current Build Behavior
-
-- A build is a list of unit instances, not a count map.
-- Adding a unit creates a separate instance with its own added race/class traits.
-- Unit star levels are recomputed from duplicate counts:
-  - `3` copies => `2*`
-  - `9` copies => `3*`
-
-Trait editing:
-
-- Each build unit shows base races/classes plus any added ones.
-- Added traits can be inserted or removed per unit.
-- Base traits are not removable.
-
-## Unit Browser Behavior
-
-- Replaced the older searchable dropdown.
-- Shows all units grouped by cost.
-- Supports one-click add/remove by unit name.
-- Shows current copy count in the build.
-- Filtering supports:
-  - Cost
-  - Race
-  - Class
-
-Filter semantics:
-
-- OR within the same group
-- AND across groups
-
-Example:
-
-- `1g` + `2g` means either cost
-- `Hunter` + `Mage` means either class
-- `1g` + `Hunter` means units matching both selected groups
-
-## Synergy Evaluation Notes
-
-Main logic lives in `buildSynergySummaries()` in `app.js`.
-
-Behavior already implemented:
-
-- Synergies are split into active and inactive sections.
-- Inactive synergies only show if at least one relevant unit exists in the build.
-- Synergy perks are cumulative by reached level.
-- Wizard reduces second-level requirements by `1`.
-
-Special-case rules already implemented:
-
-- `Faceless` is active only if no other synergies are active.
-- `Demon` is active only if:
-  - there is exactly one Demon in the build, or
-  - `Demon Hunter` is active
-
-If you add more special cases, keep them centralized in the synergy evaluation logic rather than scattering conditions across render code.
-
-## Persistence
-
-- Saved builds are stored in `localStorage`
-- Storage key: `dac_builder_saved_builds`
-
-Saved data contains unit instances with:
-
-- `name`
-- `cost`
-- `baseRace`
-- `baseClass`
-- `addedRace`
-- `addedClass`
-- `stars`
-
-On load, unit `id`s are regenerated with `crypto.randomUUID()`.
-
-## Known Constraints
-
-- No test suite currently exists.
-- No build step or framework exists.
-- The app is DOM-driven and re-renders by replacing sections of markup.
-- Because this is a static site, avoid introducing server assumptions.
-
-## Developer Guidance
-
-- Prefer updating `units.js` and `synergies.js` instead of hardcoding data in `app.js`.
-- If a synergy should display, it must be added to `synergies.js`.
-- Be careful when changing layout: desktop usage is the primary target.
-- Keep the current build compact enough that many units can be visible at once.
-- Avoid reintroducing the old unit dropdown flow unless explicitly requested.
-
-## High-Risk Areas
-
-- `buildSynergySummaries()` in `app.js`
-  - Wizard adjustments and special-case trait logic live here.
-- Build unit mutation flow
-  - Trait edits, duplicate counting, and star recomputation depend on `syncBuildState()`.
-- `units.js`
-  - Small trait changes can alter filters, synergies, and build behavior broadly.
-
-## Safe Extension Points
-
-- Add more unit data in `units.js`
-- Add more synergy definitions in `synergies.js`
-- Improve perk display formatting in the synergy panel
-- Add more special-case synergy rules in `app.js`
-- Add export/import for builds if needed, still staying static-only
+- Item recipes are disabled; Equipment Recast replaces them.
+- Dark Heart and Magic Card are leftover code and not obtainable.
+- Spare Undead pieces come from the Ascetic's Cap item and Pandaren fishing.
+- A piece's level is cost + 2 × (stars − 1), capped at 9. It drives player damage (`floor(1 + level/3)`), sell price, and the Ogre and Priest rules.
+- Values the server can override per lobby are labelled "default" on the site: pool size, bad-luck threshold, Ascendency chance.

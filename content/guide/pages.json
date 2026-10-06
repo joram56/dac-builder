@@ -1,0 +1,9 @@
+[
+  {"file": "index.html", "title": "How to play", "description": "Beginner's guide to Dota Auto Chess: how a game works, from buying pieces to winning."},
+  {"file": "shop.html", "title": "Shop & odds", "description": "Dota Auto Chess shop odds by courier level, rerolling, the shared piece pool and bad-luck protection."},
+  {"file": "economy.html", "title": "Gold & levels", "description": "Dota Auto Chess gold income, interest, streaks, selling, courier XP and board size."},
+  {"file": "combining.html", "title": "Stars & combining", "description": "How Dota Auto Chess pieces combine into 2-star and 3-star pieces, and the bench."},
+  {"file": "rounds.html", "title": "Rounds & combat", "description": "Dota Auto Chess round timers, creep rounds, loot, damage to players and elimination."},
+  {"file": "special.html", "title": "Special pieces & draws", "description": "Legendary rotation, Pandaren fishing, Io, Undead spare pieces, Heart of the Machine, Wheel of Wonder and Dismiss."},
+  {"file": "items.html", "title": "Items, relics & talents", "description": "How items, Spoil Tokens, Equipment Recast, relics and talents work in Dota Auto Chess."}
+]

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop &amp; odds · DAC Builder</title>
+<meta name="description" content="Dota Auto Chess shop odds by courier level, rerolling, the shared piece pool and bad-luck protection.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="" data-root="../">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="26" height="26"><span>DAC Builder</span></a>
+    <nav class="mainnav"><a href="../index.html">Builder</a><a href="../pieces/index.html">Pieces</a><a href="../synergies/index.html">Synergies</a><a href="../items/index.html">Items</a><a href="../guide/index.html" class="active">Guide</a></nav>
+    <div class="search">
+      <input id="site-search" type="search" placeholder="Search pieces, synergies, items…" autocomplete="off" aria-label="Search the wiki">
+      <div id="site-search-results" class="search-results" hidden></div>
+    </div>
+  </div>
+</header>
+<main class="container">
+
+<div class="guide-layout">
+  <aside class="guide-nav"><p class="eyebrow">Guide</p><a href="index.html">How to play</a><a href="shop.html" class="active">Shop &amp; odds</a><a href="economy.html">Gold &amp; levels</a><a href="combining.html">Stars &amp; combining</a><a href="rounds.html">Rounds &amp; combat</a><a href="special.html">Special pieces &amp; draws</a><a href="items.html">Items, relics &amp; talents</a></aside>
+  <article class="guide-body prose">
+    <h1>Shop &amp; odds</h1>
+<p class="lede">At the start of every preparation round your shop is refreshed with 5 random pieces. What it can offer depends on your courier level and on what's left in the shared pool.</p>
+
+<h2>Shop odds by courier level</h2>
+<p>The chance for each shop slot to be a piece of each cost:</p>
+<table class="data-table odds"><thead><tr><th>Level</th><th class="cost-text-1">1 gold</th><th class="cost-text-2">2 gold</th><th class="cost-text-3">3 gold</th><th class="cost-text-4">4 gold</th><th class="cost-text-5">5 gold</th></tr></thead><tbody><tr><th>1</th><td class="">100%</td><td class="zero">0%</td><td class="zero">0%</td><td class="zero">0%</td><td class="zero">0%</td></tr><tr><th>2</th><td class="">85%</td><td class="">15%</td><td class="zero">0%</td><td class="zero">0%</td><td class="zero">0%</td></tr><tr><th>3</th><td class="">70%</td><td class="">25%</td><td class="">5%</td><td class="zero">0%</td><td class="zero">0%</td></tr><tr><th>4</th><td class="">55%</td><td class="">35%</td><td class="">10%</td><td class="zero">0%</td><td class="zero">0%</td></tr><tr><th>5</th><td class="">45%</td><td class="">35%</td><td class="">18%</td><td class="">2%</td><td class="zero">0%</td></tr><tr><th>6</th><td class="">35%</td><td class="">35%</td><td class="">25%</td><td class="">5%</td><td class="zero">0%</td></tr><tr><th>7</th><td class="">25%</td><td class="">30%</td><td class="">35%</td><td class="">10%</td><td class="zero">0%</td></tr><tr><th>8</th><td class="">20%</td><td class="">30%</td><td class="">32%</td><td class="">17%</td><td class="">1%</td></tr><tr><th>9</th><td class="">20%</td><td class="">25%</td><td class="">27%</td><td class="">25%</td><td class="">3%</td></tr><tr><th>10</th><td class="">15%</td><td class="">25%</td><td class="">25%</td><td class="">29%</td><td class="">6%</td></tr><tr><th>11</th><td class="">15%</td><td class="">20%</td><td class="">20%</td><td class="">36%</td><td class="">9%</td></tr></tbody></table>
+<p class="muted small">Levels above 10 can only be reached with the Flourish talent; from level 11 the odds stop changing. If a cost tier has no pieces left that you can get (for example because it's sold out or <a href="special.html#dismiss">dismissed</a>), the slot is rolled again, so real odds shift a little late in the game.</p>
+
+<h2>Rerolling and locking</h2>
+<ul>
+  <li><strong>Reroll</strong> costs 2 gold and gives you 5 new pieces. Pieces from the panel you just rerolled away won't show up in the very next panel.</li>
+  <li><strong>Lock</strong> keeps your current panel when the next round starts, so you can come back for a piece you can't afford yet. Rerolling unlocks it.</li>
+  <li>The free refresh at the start of each round always happens unless the shop is locked.</li>
+</ul>
+
+<h2>The shared pool</h2>
+<p>All 8 players draw from one shared pool of pieces. When someone buys a piece, that copy is gone for everyone until it is sold back. By default the pool holds:</p>
+<table class="data-table"><thead><tr><th>Cost</th><th>Different pieces</th><th>Copies of each (default)</th></tr></thead><tbody><tr><th class="cost-text-1">1 gold</th><td>20</td><td>20</td></tr><tr><th class="cost-text-2">2 gold</th><td>21</td><td>20</td></tr><tr><th class="cost-text-3">3 gold</th><td>20</td><td>15</td></tr><tr><th class="cost-text-4">4 gold</th><td>18</td><td>15</td></tr><tr><th class="cost-text-5">5 gold</th><td>19</td><td>10</td></tr></tbody></table>
+<ul>
+  <li><strong>Legendary rotation.</strong> Only 10 of the 5-cost pieces are in each game; the rest are removed at random. Five of the ten are revealed at the start. The first player to recruit a hidden one reveals it and gets a 5-gold bonus.</li>
+  <li><strong>★★★ monopoly.</strong> When anyone makes a ★★★ piece, every remaining copy of that piece is removed from the pool. They come back if that ★★★ is sold. Druids are exempt.</li>
+  <li><strong>Selling</strong> returns copies to the pool: 1 for a ★, 3 for a ★★, 9 for a ★★★.</li>
+  <li>The game's server can change the pool size for a lobby, so treat these numbers as defaults.</li>
+</ul>
+
+<h2>Bad-luck protection</h2>
+<p>The shop works a bit like a deck of cards. For each cost tier, the game tracks how often you've been offered each piece. Once you've seen the pieces of a tier more than about once each on average, the next draw of that cost is steered to the piece you've seen the least (if it's still in the pool and not dismissed). When almost every piece of a tier has been seen, the tracking starts over.</p>
+<p>The draw doesn't look at rank, account, VIP status or win streaks. Everyone has the same odds.</p>
+
+<h2>Rare shop pieces</h2>
+<ul>
+  <li><a href="../pieces/io.html">Io</a> has a 0.2% chance to appear in any shop slot, at any level. The Radiance talent raises this.</li>
+  <li>“SSR” versions of Chaos Knight, Shadow Shaman, Brewmaster and Ogre Magi can appear from courier level 7 at a chance of 1 in 100 million per slot.</li>
+</ul>
+
+    <nav class="prev-next"><a class="prev" href="index.html">← How to play</a><a class="next" href="economy.html">Gold &amp; levels →</a></nav>
+  </article>
+</div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Data extracted from the Dota Auto Chess game files (Steam Workshop build). Last generated 2026-10-06.
+    Fan-made site, not affiliated with Drodo Studio or Valve. Dota 2 art &copy; Valve Corporation.</p>
+  </div>
+</footer>
+<script src="../assets/js/search-index.js"></script><script src="../assets/js/site.js"></script>
+</body>
+</html>

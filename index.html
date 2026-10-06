@@ -1,62 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dota Auto Chess Builder</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="app">
-      <header class="header">
-        <h1>Dota Auto Chess Builder</h1>
-        <p>Simple static build tester with local saves.</p>
-      </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAC Builder · Dota Auto Chess team builder and wiki</title>
+<meta name="description" content="Plan Dota Auto Chess line-ups: add pieces, see which synergies activate, save and share builds.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="page-builder" data-root="">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="26" height="26"><span>DAC Builder</span></a>
+    <nav class="mainnav"><a href="index.html" class="active">Builder</a><a href="pieces/index.html">Pieces</a><a href="synergies/index.html">Synergies</a><a href="items/index.html">Items</a><a href="guide/index.html">Guide</a></nav>
+    <div class="search">
+      <input id="site-search" type="search" placeholder="Search pieces, synergies, items…" autocomplete="off" aria-label="Search the wiki">
+      <div id="site-search-results" class="search-results" hidden></div>
+    </div>
+  </div>
+</header>
+<main class="container">
+<div class="builder">
+  <section class="builder-main">
+    <div class="panel board-panel">
+      <div class="board-toolbar">
+        <h1>Team builder</h1>
+        <label class="inline-field">Courier level
+          <select id="level"></select>
+        </label>
+        <span class="stat-pill" id="board-count" title="Pieces on board / pieces allowed at this courier level">0 / 10</span>
+        <span class="stat-pill" id="board-cost" title="Total gold value of the pieces on the board">0 gold</span>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" id="share-btn">Copy share link</button>
+        <button type="button" class="btn ghost" id="clear-btn">Clear board</button>
+      </div>
+      <div id="board" class="board" aria-live="polite"></div>
+      <div class="save-row">
+        <input id="build-name" type="text" placeholder="Build name, e.g. Mage Elves" aria-label="Build name">
+        <button type="button" class="btn" id="save-btn">Save</button>
+        <select id="saved-builds" aria-label="Saved builds"><option value="">Saved builds…</option></select>
+        <button type="button" class="btn ghost" id="load-btn">Load</button>
+        <button type="button" class="btn ghost" id="delete-btn">Delete</button>
+        <span id="save-status" class="muted small" role="status"></span>
+      </div>
+    </div>
 
-      <section class="controls">
-        <div class="control-row">
-          <label for="build-name">Build Name</label>
-          <input id="build-name" type="text" placeholder="e.g. Undead Hunters" />
-          <button id="save-build-btn" type="button">Save Build</button>
-          <button id="new-build-btn" type="button">New Build</button>
-        </div>
+    <div class="panel picker-panel">
+      <div class="picker-head">
+        <h2>Add pieces</h2>
+        <input id="picker-search" type="search" placeholder="Search by name…" aria-label="Search pieces">
+        <div class="chip-row" id="cost-filters"></div>
+        <label class="check"><input type="checkbox" id="show-special"> Show special pieces</label>
+        <button type="button" class="link-btn" id="picker-clear">Clear filters</button>
+      </div>
+      <div class="trait-filter-rows">
+        <div class="filter-row"><span class="filter-label">Race</span><div class="chip-row" id="race-filters"></div></div>
+        <div class="filter-row"><span class="filter-label">Class</span><div class="chip-row" id="class-filters"></div></div>
+      </div>
+      <p class="muted small picker-hint">Click a piece to add it. A green trait icon means adding it would unlock a new synergy level.</p>
+      <div id="picker"></div>
+    </div>
+  </section>
 
-        <div class="control-row">
-          <label for="saved-builds">Saved Builds</label>
-          <select id="saved-builds">
-            <option value="">Select saved build</option>
-          </select>
-          <button id="load-build-btn" type="button">Load</button>
-          <button id="delete-build-btn" type="button">Delete</button>
-        </div>
-      </section>
+  <aside class="panel builder-side">
+    <h2>Synergies</h2>
+    <div id="synergy-list"></div>
+  </aside>
+</div>
 
-      <section class="grid">
-        <div class="left-column">
-          <section class="panel">
-            <h2 id="build-title">Current Build (0)</h2>
-            <div id="build-list" class="build-list"></div>
-          </section>
-
-          <section class="panel browser-panel">
-            <div class="panel-head">
-              <h2>Unit Browser</h2>
-              <button id="clear-filters-btn" type="button">Clear Filters</button>
-            </div>
-            <div id="filter-groups" class="filter-groups"></div>
-            <div id="unit-browser" class="unit-browser"></div>
-          </section>
-        </div>
-
-        <section class="panel">
-          <h2>Synergies</h2>
-          <div id="synergy-list" class="synergy-list"></div>
-        </section>
-      </section>
-    </main>
-
-    <script src="units.js"></script>
-    <script src="synergies.js"></script>
-    <script src="app.js"></script>
-  </body>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Data extracted from the Dota Auto Chess game files (Steam Workshop build). Last generated 2026-10-06.
+    Fan-made site, not affiliated with Drodo Studio or Valve. Dota 2 art &copy; Valve Corporation.</p>
+  </div>
+</footer>
+<script src="assets/js/search-index.js"></script><script src="assets/js/site.js"></script><script src="assets/js/data.js"></script><script src="assets/js/builder.js"></script>
+</body>
 </html>
