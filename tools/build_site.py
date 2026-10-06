@@ -24,13 +24,15 @@ COST_LABEL = {1: "1 gold", 2: "2 gold", 3: "3 gold", 4: "4 gold", 5: "5 gold", 9
 SOURCE_LABEL = {
     "standard": None,
     "dark": "Undead spare",
-    "special": "Special",
+    "pandaren": "Pandaren spirit",
+    "rare": "Rare shop piece",
     "gold": "Gold Core",
     "ssr": "SSR",
 }
 SOURCE_NOTE = {
     "dark": "Not in the normal shop. This is one of the “spare” Undead pieces: you mainly get it when a piece holding an Ascetic's Cap is reborn as a random Undead, or through Pandaren fishing.",
-    "special": "Not in the normal shop. See Special pieces in the guide for how it appears.",
+    "pandaren": "Not in the shop. One of the Pandaren spirits: the only way to get it is Pandaren fishing, when a Pandaren on your board brings it in at the start of a round.",
+    "rare": "Not in the normal pool. It has a 0.2% chance to appear in any shop slot, at any courier level.",
     "gold": "Only obtainable from a Gold Core draw.",
     "ssr": "A super-rare variant. From courier level 7, each shop slot has a 1 in 100 million chance to offer one of the four SSR pieces. It costs 9 gold and arrives as a finished piece: it can't be upgraded and counts as ★★★ (level 9). For synergies it counts as a different piece from the normal version. See Special pieces in the guide.",
 }
@@ -203,8 +205,22 @@ class Site:
         for cost in range(1, 6):
             cards = "".join(self.piece_card(p, root) for p in self.pieces if p["cost"] == cost and p["source"] == "standard")
             groups.append(f'<section class="cost-group" data-cost-group="{cost}"><h2 class="cost-heading cost-{cost}">{cost}-cost pieces</h2><div class="piece-grid">{cards}</div></section>')
-        special = [p for p in self.pieces if p["source"] != "standard"]
-        special_cards = "".join(self.piece_card(p, root) for p in special)
+        special_groups = [
+            ("dark", "Undead spare pieces",
+             "Never in the shop. You get these mainly when a piece holding an <a href=\"../items/index.html#item_feijiangxiaomao\">Ascetic's Cap</a> is reborn as a random Undead of the same cost and star after a battle."),
+            ("pandaren", "Pandaren spirits",
+             "Never in the shop. The only way to get them is <a href=\"../guide/special.html#pandaren\">Pandaren fishing</a>: a Pandaren on your board can bring one in at the start of a round."),
+            ("ssr", "SSR pieces",
+             "Super-rare 9-gold versions of four pieces, with unique skills. From courier level 7, each shop slot has a 1 in 100 million chance to offer one. <a href=\"../guide/special.html#ssr\">More about SSR pieces</a>."),
+            ("rare", "Rare shop pieces",
+             "Not part of the shared pool, but each shop slot has a 0.2% chance to offer it at any level."),
+        ]
+        special_html = "".join(
+            f'<section class="cost-group" data-cost-group="{src}"><h2 class="cost-heading">{title}</h2>'
+            f'<p class="muted">{text}</p><div class="piece-grid">'
+            + "".join(self.piece_card(p, root) for p in self.pieces if p["source"] == src)
+            + "</div></section>"
+            for src, title, text in special_groups)
         filters = self.filter_bar()
         body = f"""
 <div class="page-head">
@@ -214,11 +230,7 @@ class Site:
 {filters}
 <div id="piece-list">
 {''.join(groups)}
-<section class="cost-group" data-cost-group="special">
-  <h2 class="cost-heading">Special pieces</h2>
-  <p class="muted">These pieces don't appear in the normal shop. The spare Undead come from the Ascetic's Cap item and Pandaren fishing, the Pandaren spirits only through fishing, Io has a 0.2% chance to appear in any shop slot, and the SSR pieces are a 1 in 100 million shop roll from courier level 7. <a href="../guide/special.html">More about special pieces</a>.</p>
-  <div class="piece-grid">{special_cards}</div>
-</section>
+{special_html}
 <p id="no-results" class="muted" hidden>No pieces match these filters.</p>
 </div>
 """
@@ -613,7 +625,7 @@ class Site:
             "pool_table": pool_table,
             "lootbox_table": lootbox_table,
             "undead_pieces": lambda: pieces_from("dark"),
-            "pandaren_pieces": lambda: pieces_from("special"),
+            "pandaren_pieces": lambda: pieces_from("pandaren"),
             "ssr_pieces": lambda: pieces_from("ssr"),
             "legendary_pieces": legendary_pieces,
             "piece_count": lambda: str(len([p for p in self.pieces if p["source"] == "standard"])),

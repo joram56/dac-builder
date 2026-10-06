@@ -219,6 +219,7 @@ class Game:
         special = self.table("chess_list_by_mana_special")
         gold = self.table("chess_list_by_mana_gold")
         skills = self.table("chess_ability_list_base")
+        pandaren = set(self.table("pandaman_list"))
         pool = {}
         for cost, ids in by_cost.items():
             for pid in ids:
@@ -228,7 +229,8 @@ class Game:
                 pool.setdefault(pid, (cost, "dark"))
         for cost, ids in special.items():
             for pid in ids:
-                pool.setdefault(pid, (cost, "special"))
+                # Pandaren spirits only come from fishing; the rest (Io) is a rare shop roll.
+                pool.setdefault(pid, (cost, "pandaren" if pid in pandaren else "rare"))
         for pid in gold:
             pool.setdefault(pid, (5, "gold"))
         # SSR variants: a single level-9 unit (no star upgrades) priced at its Level.

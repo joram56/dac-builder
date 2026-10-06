@@ -7845,7 +7845,7 @@
    "id": "earth",
    "name": "Earth Spirit ✪",
    "cost": 4,
-   "source": "special",
+   "source": "pandaren",
    "races": [
     "pandaman"
    ],
@@ -8038,7 +8038,7 @@
    "id": "ember",
    "name": "Ember Spirit ✪",
    "cost": 4,
-   "source": "special",
+   "source": "pandaren",
    "races": [
     "pandaman"
    ],
@@ -9453,7 +9453,7 @@
    "id": "storm",
    "name": "Storm Spirit ✪",
    "cost": 4,
-   "source": "special",
+   "source": "pandaren",
    "races": [
     "pandaman"
    ],
@@ -9539,7 +9539,7 @@
    "id": "void",
    "name": "Void Spirit ✪",
    "cost": 4,
-   "source": "special",
+   "source": "pandaren",
    "races": [
     "pandaman"
    ],
@@ -10056,7 +10056,7 @@
    "id": "io",
    "name": "Io",
    "cost": 5,
-   "source": "special",
+   "source": "rare",
    "races": [
     "elf"
    ],

@@ -10,7 +10,7 @@
 
 1. `~/dac_lua/` holds the unpacked game. See `~/dac_lua/README_WIKI.md` for where everything lives in the game files.
 2. `tools/extract.py` writes `data/game.json`:
-   - Pieces come from `_G.chess_list_by_mana` (normal shop), `_black` (Undead spare pieces, source `dark`), `_special` (Pandaren spirits, Io; source `special`) and `_G.chess_list_ssr` (source `ssr`).
+   - Pieces come from `_G.chess_list_by_mana` (normal shop), `_black` (Undead spare pieces, source `dark`), `_special` (Pandaren spirits, source `pandaren`; Io, source `rare`) and `_G.chess_list_ssr` (source `ssr`).
    - SSR pieces are a single level-9 unit: cost 9, one stats entry, `base` = the normal piece's id. Their unit name has no star suffix, so the game counts them as a different piece from the normal version for synergies.
    - Each piece's races and classes are its `is_*` abilities in `npc_units_custom.txt`, with stats per star (`chess_x`, `chess_x1`, `chess_x11`).
    - Skills come from `_G.chess_ability_list_base` plus `npc_abilities_custom.txt` values and tooltip labels.

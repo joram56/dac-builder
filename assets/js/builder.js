@@ -475,7 +475,7 @@
   }
 
   function sourceLabel(source) {
-    return { dark: "Undead spare", special: "Special", gold: "Golden Heart", ssr: "SSR" }[source] || "";
+    return { dark: "Undead spare", pandaren: "Pandaren", rare: "Rare", gold: "Golden Heart", ssr: "SSR" }[source] || "";
   }
 
   // ------------------------------------------------------- share links (hash)
